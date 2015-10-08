@@ -622,35 +622,117 @@ The response is an object that has a key called `server`. This key contain a sta
 
         {
           "server": {
-            "bootscript": null,
-            "dynamic_public_ip": false,
-            "id": "741db378-6b87-46d4-a8c5-4e46a09ab1f8",
-            "image": {
-              "id": "85917034-46b0-4cc5-8b48-f0a2245e357e",
-              "name": "ubuntu working"
-            },
-            "name": "my_server",
-            "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
-            "private_ip": null,
-            "public_ip": null,
-            "state": "running",
+            "dynamic_ip_required": true,
+            "name": "cocky-albattani",
+            "modification_date": "2015-10-08T15:53:50.098349+00:00",
             "tags": [
-              "test",
-              "www"
+              "hello=world",
+              "prod"
             ],
+            "state_detail": "provisioning node",
+            "image": {
+              "default_bootscript": {
+                "kernel": {
+                  "dtb": "dtb/pimouss-computing.dtb.4.0.5-235-docker",
+                  "path": "kernel/pimouss-uImage-4.0.5-235-docker",
+                  "id": "a2883579-90a2-1835-7990-a288357990a2",
+                  "title": "Pimouss 4.0.5-235-docker"
+                },
+                "title": "4.0.5-docker #235",
+                "public": false,
+                "initrd": {
+                  "path": "initrd/c1-uInitrd-2015.06.08",
+                  "id": "bf341982-abbf-1419-82ab-bf341982abbf",
+                  "title": "C1 uInitrd (2015/06/08)"
+                },
+                "bootcmdargs": {
+                  "id": "817c19a2-9b81-1c19-a29b-817c19a29b81",
+                  "value": "LINUX_COMMON ip=dhcp boot=local root=/dev/nbd0 nbd.max_parts=8 cgroup_enable=memory swapaccount=1"
+                },
+                "organization": "65ef1eb6-b765-1f1e-b6b7-65ef1eb6b765",
+                "id": "e53caaf9-43e5-1caa-f943-e53caaf943e5"
+              },
+              "creation_date": "2015-07-23T14:26:37.812947+00:00",
+              "name": "Docker 1.7.1",
+              "modification_date": "2015-09-23T14:42:22.508589+00:00",
+              "organization": "ea57600b-06ea-1760-0b06-ea57600b06ea",
+              "extra_volumes": "[]",
+              "arch": "arm",
+              "id": "d8d51776-cad8-1517-76ca-d8d51776cad8",
+              "root_volume": {
+                "size": 50000000000,
+                "id": "95b6f27a-5d95-16f2-7a5d-95b6f27a5d95",
+                "volume_type": "l_ssd",
+                "name": "scw-app-docker-latest-2015-07-23_16:22"
+              },
+              "public": true
+            },
+            "hostname": "cocky-albattani",
+            "creation_date": "2015-10-08T15:53:46.778396+00:00",
+            "public_ip": {
+              "dynamic": true,
+              "id": "3d53d1de-4d3d-13d1-de4d-3d53d1de4d3d",
+              "address": "212.47.227.255"
+            },
+            "state": "starting",
+            "bootscript": null,
+            "private_ip": "10.1.52.100",
             "volumes": {
               "0": {
-                "export_uri": null,
-                "id": "c1eb8f3a-4f0b-4b95-a71c-93223e457f5a",
-                "name": "vol simple snapshot",
-                "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                "size": 50000000000,
+                "name": "cocky-albattani-scw-app-docker-latest-2015-07-23_16:22",
+                "modification_date": "2015-10-08T15:53:46.778396+00:00",
+                "organization": "d4510651-c4d4-1106-51c4-d4510651c4d4",
+                "export_uri": "nbd://10.1.52.110:4416",
+                "creation_date": "2015-10-08T15:53:46.778396+00:00",
+                "id": "2fd6e147-a52f-16e1-47a5-2fd6e147a52f",
+                "volume_type": "l_ssd",
                 "server": {
-                  "id": "741db378-6b87-46d4-a8c5-4e46a09ab1f8",
-                  "name": "my_server"
-                },
-                "size": 10000000000,
-                "volume_type": "l_ssd"
+                  "id": "d2de1908-07d2-1e19-0807-d2de190807d2",
+                  "name": "cocky-albattani"
+                }
+              },
+              "1": {
+                "size": 50000000000,
+                "name": "50G",
+                "modification_date": "2015-10-08T15:53:47.386985+00:00",
+                "organization": "d4510651-c4d4-1106-51c4-d4510651c4d4",
+                "export_uri": "nbd://10.1.52.110:4417",
+                "creation_date": "2015-10-08T15:53:45.542890+00:00",
+                "id": "43ce0396-a243-1e03-96a2-43ce0396a243",
+                "volume_type": "l_ssd",
+                "server": {
+                  "id": "d2de1908-07d2-1e19-0807-d2de190807d2",
+                  "name": "cocky-albattani"
+                }
+              },
+              "2": {
+                "size": 50000000000,
+                "name": "50G",
+                "modification_date": "2015-10-08T15:53:47.386869+00:00",
+                "organization": "d4510651-c4d4-1106-51c4-d4510651c4d4",
+                "export_uri": "nbd://10.1.52.110:4418",
+                "creation_date": "2015-10-08T15:53:46.219710+00:00",
+                "id": "0af1a2de-cc0a-11a2-decc-0af1a2decc0a",
+                "volume_type": "l_ssd",
+                "server": {
+                  "id": "d2de1908-07d2-1e19-0807-d2de190807d2",
+                  "name": "cocky-albattani"
+                }
               }
+            },
+            "security_group": {
+              "id": "610ff44e-7561-1ff4-4e75-610ff44e7561",
+              "name": "Base group"
+            },
+            "organization": "d4510651-c4d4-1106-51c4-d4510651c4d4",
+            "id": "d2de1908-07d2-1e19-0807-d2de190807d2",
+            "location": {
+              "blade": "5",
+              "platform": "11",
+              "region": "fr-1",
+              "chassis": "11",
+              "node": "11"
             }
           }
         }
