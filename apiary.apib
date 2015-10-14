@@ -417,6 +417,44 @@ The response is an object that has a key called `organizations`. This key contai
         }
 
 
+#### Quotas [/organizations/{orga_id}/quotas]
+
+
+> **Warning**: the real URL is https://account.scaleway.com/organizations/{orga_id}/quotas.
+
++ Parameter
+    + orga_id (required, string, `5bea0358-db40-429e-bd82-953016a7e2s7`)... Organization unique identifier
+
+##### List all quotas [GET]
+
+List all Quotas of the given organization.
+
+The response is an object that has a key called `quotas`. This key contain a standard `quotas` object.
+
++ Request (application/json)
+
+    + Headers
+
+            X-Auth-Token: aaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
+
++ Response 200 (application/json)
+
+        "quotas": {
+            "sis": 100,
+            "security_rules": 30,
+            "ips": 20,
+            "snapshots": 100,
+            "servers": 50,
+            "servers_type_C1": 50,
+            "security_groups": 100,
+            "volumes": 100,
+            "images": 100,
+            "invites": 1000,
+            "trusted": 1
+        }
+
+
+
 ### group Users
 
 #### User [/users/{user_id}]
