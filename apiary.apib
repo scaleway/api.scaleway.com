@@ -163,9 +163,15 @@ Input and output data must be valid JSON with appropriate Content-Type header se
 
 ### group Tokens
 
+> **Warning**: Due to a [Blueprint limitation](https://github.com/apiaryio/api-blueprint/issues/122),
+> Apiary's mocking feature won't work for this resource.
+> You need to manually change https://api.scaleway.com/ with https://account.scaleway.com/ in your clients.
+
 A Token is an identifier associated with your account. We use this token to authenticate commands in our APIs.
 
 #### Tokens [/tokens]
+
+> **Warning**: the real URL is https://account.scaleway.com/tokens.
 
 ##### Create a token [POST]
 
@@ -352,9 +358,15 @@ The response code is a 204, which means that the action was successful with no r
 
 ### group Organizations
 
+> **Warning**: Due to a [Blueprint limitation](https://github.com/apiaryio/api-blueprint/issues/122),
+> Apiary's mocking feature won't work for this resource.
+> You need to manually change https://api.scaleway.com/ with https://account.scaleway.com/ in your clients.
+
 This resources of API methods allows you to get your Organizations informations
 
 #### Organizations [/organizations]
+
+> **Warning**: the real URL is https://account.scaleway.com/organizations.
 
 ##### List all organizations [GET]
 
