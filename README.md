@@ -1,8 +1,17 @@
-# api.scaleway.com :pencil:
+# Scaleway APIs :pencil:
 
 * Scaleway API documentation on Apiary :new:: http://docs.scaleway.apiary.io/
 * Scaleway API documentation: https://developer.scaleway.com
 * API Issues: https://github.com/scaleway/api.scaleway.com/issues
+
+## APIs
+
+Url                                   | Resources
+--------------------------------------|--------------------------------------------------------------------
+https://api.scaleway.com              | servers, images, volumes, snapshots, network, security, storage
+https://account.scaleway.com          | account, permissions, tokens, organization, billing
+https://payment.scaleway.com          | payment
+http://169.254.42.42/ (from a server) | metadata, userdata
 
 ## Clients / Libraries
 
