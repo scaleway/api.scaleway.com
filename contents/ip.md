@@ -109,7 +109,7 @@ The response is an object that has a key called `ip`. This key contain a standar
 
 ##### Remove an IP address [DELETE]
 
-Delete a server
+Delete an IP
 
 The response code is a 204, which means that the action was successful with no returned body data.
 
