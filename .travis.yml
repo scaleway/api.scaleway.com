@@ -1,0 +1,7 @@
+language: node
+
+before_script:
+- npm install -g mdlint
+
+script:
+- mdlint ./apiary.apib
