@@ -367,18 +367,13 @@
                         "type": "string"
                     },
                     {
-                        "name": "server_id",
-                        "in": "path",
-                        "description": "Server unique identifier",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
                         "name": "action",
                         "in": "body",
                         "description": "Action to execute",
                         "required": true,
-                        "type": "string"
+                        "schema": {
+                            "type": "string"
+                        }
                     }
                 ]
             }
