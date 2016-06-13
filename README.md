@@ -36,3 +36,4 @@ React-native iOS app        | Javascript/iOS     | [@42am](https://github.com/42
 Terraform plugin            | Golang             | [@hex-sh](https://github.com/hex-sh)             | https://github.com/hex-sh/terraform-provider-scaleway
 API client                  | C                  | [@QuentinPerez](https://github.com/QuentinPerez) | https://github.com/QuentinPerez/C-Scaleway
 Apache libcloud integration | Python             | [@bonifaido](https://github.com/bonifaido)             | Work in progree at: https://github.com/apache/libcloud/pull/777
+API client                  | Golang             | [@breakbit](https://github.com/breakbit)         | https://github.com/breakbit/scaleway
