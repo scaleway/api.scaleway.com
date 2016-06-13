@@ -35,3 +35,4 @@ Docker machine driver       | Golang             | [@nlamirault](https://github.
 React-native iOS app        | Javascript/iOS     | [@42am](https://github.com/42am)                 | https://github.com/42am/scaleway-ios
 Terraform plugin            | Golang             | [@hex-sh](https://github.com/hex-sh)             | https://github.com/hex-sh/terraform-provider-scaleway
 API client                  | C                  | [@QuentinPerez](https://github.com/QuentinPerez) | https://github.com/QuentinPerez/C-Scaleway
+Apache libcloud integration | Python             | [@bonifaido](https://github.com/bonifaido)             | Work in progree at: https://github.com/apache/libcloud/pull/777
