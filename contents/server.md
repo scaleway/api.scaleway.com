@@ -16,8 +16,10 @@ The response is an object that has a key called `server`. This key contain a sta
     + organization (required, string, `000a115d-2852-4b0a-9ce8-47f1134ba95a`)... Organization unique identifier
     + image (required, string, `85917034-46b0-4cc5-8b48-f0a2245e357e`)... Image unique identifier
     + volumes (required, list, `volumes: {1: {name: "vol_demo", organization: "ecc1c86a-eabb-43a7-9c0a-77e371753c0a", size: 10000000000, volume_type: "l_sdd"`)... A list of volumes identifier to be attached to the server
+    + commercial_type (optional, string, `commercial_type: "VC1S"`)... The type of the server you want to create (C1, VC1S, VC1M, VC1L, C2S, C2M, C2L).
     + tags (optional, list, `[test, www]`)... A list of tags
-
+    + enable_ipv6 (optional, boolean, `enable_ipv6: true`)... Enable IPv6 on the server.
+    
 + Request
 
       + Body
@@ -26,21 +28,23 @@ The response is an object that has a key called `server`. This key contain a sta
               "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
               "name": "my_server",
               "image": "85917034-46b0-4cc5-8b48-f0a2245e357e",
-              "tags": ["test", "www"]
+              "commercial_type": "VC1S",
+              "tags": ["test", "www"],
+              "enable_ipv6": true
             }
 
 + Response 201 (application/json)
 
     + Header
     
-        location: https://api.cloud.online.net/servers/3cb18e2d-f4f7-48f7-b452-59b88ae8fc8c
+        location: https://api.scaleway.com/servers/3cb18e2d-f4f7-48f7-b452-59b88ae8fc8c
 
     + Body
 
         {
           "server": {
             "bootscript": null,
-            "dynamic_public_ip": false,
+            "dynamic_ip_required": true,
             "id": "3cb18e2d-f4f7-48f7-b452-59b88ae8fc8c",
             "image": {
               "id": "85917034-46b0-4cc5-8b48-f0a2245e357e",
@@ -50,7 +54,11 @@ The response is an object that has a key called `server`. This key contain a sta
             "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
             "private_ip": null,
             "public_ip": null,
-            "state": "running",
+            "enable_ipv6": true,
+            "state": "stopped",
+            "ipv6": null,
+            "commercial_type": "VC1S",
+            "arch": "x86_64",
             "tags": [
               "test",
               "www"
@@ -338,7 +346,7 @@ The response is an object that has a key called `task`. This key contain a stand
 
     + Header
 
-        location: https://api.cloud.online.net/tasks/a8a1775c-0dda-4f52-87b2-4e8101d68d6e
+        location: https://api.scaleway.com/tasks/a8a1775c-0dda-4f52-87b2-4e8101d68d6e
 
     + Body
 
