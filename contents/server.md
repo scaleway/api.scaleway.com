@@ -42,7 +42,7 @@ The response is an object that has a key called `server`. This key contain a sta
         {
           "server": {
             "bootscript": null,
-            "dynamic_public_ip": false,
+            "dynamic_ip_required": true,
             "id": "3cb18e2d-f4f7-48f7-b452-59b88ae8fc8c",
             "image": {
               "id": "85917034-46b0-4cc5-8b48-f0a2245e357e",
@@ -52,7 +52,7 @@ The response is an object that has a key called `server`. This key contain a sta
             "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
             "private_ip": null,
             "public_ip": null,
-            "state": "running",
+            "state": "stopped",
             "commercial_type": "VC1S",
             "arch": "x86_64",
             "tags": [
