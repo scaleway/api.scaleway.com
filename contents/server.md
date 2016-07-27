@@ -33,7 +33,7 @@ The response is an object that has a key called `server`. This key contain a sta
 
     + Header
     
-        location: https://api.cloud.online.net/servers/3cb18e2d-f4f7-48f7-b452-59b88ae8fc8c
+        location: https://api.scaleway.com/servers/3cb18e2d-f4f7-48f7-b452-59b88ae8fc8c
 
     + Body
 
@@ -338,7 +338,7 @@ The response is an object that has a key called `task`. This key contain a stand
 
     + Header
 
-        location: https://api.cloud.online.net/tasks/a8a1775c-0dda-4f52-87b2-4e8101d68d6e
+        location: https://api.scaleway.com/tasks/a8a1775c-0dda-4f52-87b2-4e8101d68d6e
 
     + Body
 
