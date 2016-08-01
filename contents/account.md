@@ -127,7 +127,7 @@ The response is an object that has a key called `token`. This key contain a stan
 
         {
             "token": {
-                creation_date": "2014-05-22T08:06:51.742826+00:00",
+                "creation_date": "2014-05-22T08:06:51.742826+00:00",
                 "expires": "2014-05-22T11:18:07.786841+00:00",
                 "id": "654c95b0-2cf5-41a3-b3cc-733ffba4b4b7",
                 "inherits_user_perms": true,
