@@ -8,10 +8,13 @@
 
 Url                                   | Resources
 --------------------------------------|--------------------------------------------------------------------
-https://api.scaleway.com              | servers, images, volumes, snapshots, network, security, storage
-https://account.scaleway.com          | account, permissions, tokens, organization, billing
-https://payment.scaleway.com          | payment
-http://169.254.42.42/ (from a server) | metadata, userdata
+https://api.scaleway.com              | Servers, Images, Volumes, Snapshots, Network, Security, Storage.
+https://account.scaleway.com          | Account, Permissions, Tokens, Organization, User.
+https://billing.scaleway.com          | Invoices, Invoice lines, Discounts, Usages†, Telemetry†, Products†, Price lists†.
+https://payment.scaleway.com          | Payment lines.
+http://169.254.42.42/ (from a server) | Metadata, User's data.
+
+†: not exposed yet.
 
 ## Clients / Libraries
 
