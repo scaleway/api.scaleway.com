@@ -1,4 +1,4 @@
-# Scaleway APIs :pencil:
+# Scaleway APIs :pencil: [![Build Status](https://travis-ci.org/scaleway/api.scaleway.com.svg?branch=master)](https://travis-ci.org/scaleway/api.scaleway.com)
 
 * Scaleway API documentation on Apiary :new:: http://docs.scaleway.apiary.io/
 * Scaleway API documentation: https://developer.scaleway.com
