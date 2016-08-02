@@ -36,9 +36,8 @@ API client                  | Perl               | [@mgv](https://github.com/mgv
 Kitchen driver              | Ruby               | [@rhass](https://github.com/rhass)               | https://github.com/rhass/kitchen-scaleway
 Docker machine driver       | Golang             | [@nlamirault](https://github.com/nlamirault)     | https://github.com/nlamirault/docker-machine-scaleway
 React-native iOS app        | Javascript/iOS     | [@42am](https://github.com/42am)                 | https://github.com/42am/scaleway-ios
-Terraform plugin            | Golang             | [@hex-sh](https://github.com/hex-sh)             | https://github.com/hex-sh/terraform-provider-scaleway
+Terraform provider          | Golang             | [@hashicorp](https://github.com/hashicorp)       | https://terraform.io/docs/providers/scaleway/
 API client                  | C                  | [@QuentinPerez](https://github.com/QuentinPerez) | https://github.com/QuentinPerez/C-Scaleway
 Apache libcloud integration | Python             | [@bonifaido](https://github.com/bonifaido)       | Work in progree at: https://github.com/apache/libcloud/pull/777
 API client                  | Golang             | [@breakbit](https://github.com/breakbit)         | https://github.com/breakbit/scaleway
-Terraform plugin            | Golang             | [@amonapp](https://github.com/amonapp)           | https://github.com/amonapp/terraform-provider-scaleway
 CLI                         | Node.js            | [@Unitech](https://github.com/Unitech)           | https://github.com/Unitech/scaleway-commander
