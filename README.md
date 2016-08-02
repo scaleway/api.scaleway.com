@@ -11,7 +11,7 @@ Url                                   | Resources
 https://api.scaleway.com              | Servers, Images, Volumes, Snapshots, Network, Security, Storage.
 https://account.scaleway.com          | Account, Permissions, Tokens, Organization, User.
 https://billing.scaleway.com          | Invoices, Invoice lines, Discounts, Usages†, Telemetry†, Products†, Price lists†.
-https://payment.scaleway.com          | Payment lines.
+https://payment.scaleway.com          | Payment lines, Accounting lines.
 http://169.254.42.42/ (from a server) | Metadata, User's data.
 
 †: not exposed yet.
