@@ -1,13 +1,13 @@
 ### group Metadata
 
-Resources related to server Metadata available from your C1 servers at `http://169.254.42.42`
+Resources related to server Metadata available from your servers at `http://169.254.42.42`
 
-#### C1 server metadata [/conf{?format}]
+#### Server metadata [/conf{?format}]
 
 + Parameters
     + format (optional, string, `json`)... Rendering format
 
-##### Serves pimouss metadata [GET]
+##### Serves server metadata [GET]
 Serves instance metadata using its own IP address as authentication token.
 
 + Response 200 (application/json)
