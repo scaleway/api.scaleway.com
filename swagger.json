@@ -3,7 +3,7 @@
     "info": {
         "title": "Scaleway API",
         "version": "",
-        "description": "The Scaleway API allows you to manage servers and resources in a simple, programmatic way using conventional HTTP requests. \nAll features you will find in the web control panel are also available through the API.\n\n## Request and response\n\nOur api works over https and is accessed from two endpoint:\n\n- `account.scaleway.com` domain related to account actions\n\n- `api.scaleway.com` domain related to compute actions\n\nAll data is sent and received as json.\n\n## Constructing Requests\n\nRequests are made of two components:\n\n- Base URL: `https://api.scaleway.com`\n\n- Resource path: `servers`\n\nTo construct a proper request, you need to format the URL as follows:\n\n`https://api.scaleway.com/{resource}`\n\nExample: `https://api.scaleway.com/volumes/f929fe39-63f8-4be8-a80e-1e9c8ae22a76`\n\nThe following code is an example request to retrieve detailed informations about a volume\n\n```\n% curl -H 'X-Auth-Token: 017ce0ce-20ec-4d4ez-b44c-e561a23481d2c' -H 'Content-Type: application/json' https://api.scaleway.com/volumes/f929fe39-63f8-4be8-a80e-1e9c8ae22a76 -i\n\nHTTP/1.1 200 OK\nServer: nginx\nDate: Thu, 22 May 2014 07:55:00 GMT\nContent-Type: application/json\nContent-Length: 1345\nConnection: keep-alive\nX-Sentry-ID: None\nStrict-Transport-Security: max-age=86400\n\n{\n  \"volumes\": [\n    {\n      \"export_uri\": null,\n      \"id\": \"f929fe39-63f8-4be8-a80e-1e9c8ae22a76\",\n      \"name\": \"volume-0-1\",\n      \"organization\": \"000a115d-2852-4b0a-9ce8-47f1134ba95a\",\n      \"server\": null,\n      \"size\": 10000000000,\n      \"volume_type\": \"l_ssd\"\n    },\n    {\n      \"export_uri\": null,\n      \"id\": \"0facb6b5-b117-441a-81c1-f28b1d723779\",\n      \"name\": \"volume-0-2\",\n      \"organization\": \"000a115d-2852-4b0a-9ce8-47f1134ba95a\",\n      \"server\": null,\n      \"size\": 20000000000,\n      \"volume_type\": \"l_ssd\"\n    }\n  ]\n}\n```\n\n## Basic Authentication\n\nYou authenticate to the API by requesting a token. You can create a token from the `account.scaleway.com` domain related to account actions with a POST request on the /tokens HTTP resource.\n\nBasic Authentication process:\n\n- Query via POST request the /tokens resource [see here how to](https://developer.scaleway.com/#tokens-tokens-post)\n\n- Supply an \"X-Auth-Token\" header followed by the token you get previously, e.g. \"4e0b46e4-7c1d-44d4-8ba6-dc5f80694397\"\n\n```\ncurl -X GET -H \"X-Auth-Token: 4e0b46e4-7c1d-44d4-8ba6-dc5f80694397\" -H \"Content-Type: application/json\" https://account.scaleway.com/{resources}\n```\n\n## Errors\n\nWe use conventional HTTP response codes to indicate success or failure of an API request.\n\nIn general, codes in the 2xx range indicate success, codes in the 4xx range indicate an error that resulted from the provided information (e.g., a required parameter is missing), and codes in the 5xx range indicate an error with our servers.\n\n### HTTP Status Code Summary\n\n- `200 OK` - Everything worked as expected.\n\n- `400 Bad Request` - Often missing a required parameter.\n\n- `401 Unauthorized` - No valid API key provided.\n\n- `402 Request Failed` - Parameters were valid but request failed.\n\n- `403 Forbidden` - Insufficient privileges to access requested resource.\n\n- `404 Not Found` - The requested item doesn't exist.\n\n- `50x` Server errors - something went wrong on api domain's end.\n\nInput and output data must be valid JSON with appropriate Content-Type header set.\n\n### Attributes\n\n- type:\n \n  - `invalid_request_error`: Occur when your request has invalid parameters.\n  - `invitalid_auth`: Arise when there is a problem of authentication.\n  - `uknown_resource`: Occur when the resource doesn't exist.\n  - `authorization_required`: You don't have sufficient right to access the resource.\n  - `api_error`: API errors use in case of problem with api domain's servers\n\n- message:\n \n  - A human readable error giving more details about the error\n\n- fields (Optional):\n\n  - An array of parameters with an human readable message giving more details about the error.\n\n### Errors responses example \n\n+ Response 400 (application/json)\n\n        {\n            \"fields\": {\n                \"email\": [\n                    \"incorrect email address\",\n                    \"required key not provided\"\n                ],\n                \"firstname\": [\n                    \"length of value must be at least 2\",\n                    \"required key not provided\"\n                ],\n                \"lastname\": [\n                    \"length of value must be at least 2\",\n                    \"required key not provided\"\n                ]\n            },\n            \"message\": \"Validation Error\",\n            \"type\": \"invalid_request_error\"\n        }\n\n+ Response 401 (application/json)\n\n        {\n            \"message\": \"The header 'X-Auth-Token' is missing\",\n            \"type\": \"invalid_auth\"\n        }\n\n+ Response 403 (application/json)\n\n        {\n          \"message\": \"The token provided doesn't have the requested permission.\",\n          \"type\": \"authorization_required\"\n        }\n\n+ Response 404 (application/json)\n\n        {\n            \"message\": \"User not found\",\n            \"type\": \"unknown_resource\"\n        }\n        \n        \n"
+        "description": "The Scaleway API allows you to manage servers and resources in a simple, programmatic way using conventional HTTP requests.\nAll features you will find in the web control panel are also available through the API.\n\n## Request and response\n\nOur api works over https and is accessed from two endpoint:\n\n- `account.scaleway.com` domain related to account actions\n\n- `api.scaleway.com` domain related to compute actions\n\nAll data is sent and received as json.\n\n## Constructing Requests\n\nRequests are made of two components:\n\n- Base URL: `https://api.scaleway.com`\n\n- Resource path: `servers`\n\nTo construct a proper request, you need to format the URL as follows:\n\n`https://api.scaleway.com/{resource}`\n\nExample: `https://api.scaleway.com/volumes/f929fe39-63f8-4be8-a80e-1e9c8ae22a76`\n\nThe following code is an example request to retrieve detailed informations about a volume\n\n```\n% curl -H 'X-Auth-Token: 017ce0ce-20ec-4d4ez-b44c-e561a23481d2c' -H 'Content-Type: application/json' https://api.scaleway.com/volumes/f929fe39-63f8-4be8-a80e-1e9c8ae22a76 -i\n\nHTTP/1.1 200 OK\nServer: nginx\nDate: Thu, 22 May 2014 07:55:00 GMT\nContent-Type: application/json\nContent-Length: 1345\nConnection: keep-alive\nX-Sentry-ID: None\nStrict-Transport-Security: max-age=86400\n\n{\n  \"volumes\": [\n    {\n      \"export_uri\": null,\n      \"id\": \"f929fe39-63f8-4be8-a80e-1e9c8ae22a76\",\n      \"name\": \"volume-0-1\",\n      \"organization\": \"000a115d-2852-4b0a-9ce8-47f1134ba95a\",\n      \"server\": null,\n      \"size\": 10000000000,\n      \"volume_type\": \"l_ssd\"\n    },\n    {\n      \"export_uri\": null,\n      \"id\": \"0facb6b5-b117-441a-81c1-f28b1d723779\",\n      \"name\": \"volume-0-2\",\n      \"organization\": \"000a115d-2852-4b0a-9ce8-47f1134ba95a\",\n      \"server\": null,\n      \"size\": 20000000000,\n      \"volume_type\": \"l_ssd\"\n    }\n  ]\n}\n```\n\n## Basic Authentication\n\nYou authenticate to the API by requesting a token. You can create a token from the `account.scaleway.com` domain related to account actions with a POST request on the /tokens HTTP resource.\n\nBasic Authentication process:\n\n- Query via POST request the /tokens resource [see here how to](https://developer.scaleway.com/#tokens-tokens-post)\n\n- Supply an \"X-Auth-Token\" header followed by the token you get previously, e.g. \"4e0b46e4-7c1d-44d4-8ba6-dc5f80694397\"\n\n```\ncurl -X GET -H \"X-Auth-Token: 4e0b46e4-7c1d-44d4-8ba6-dc5f80694397\" -H \"Content-Type: application/json\" https://account.scaleway.com/{resources}\n```\n\n## Errors\n\nWe use conventional HTTP response codes to indicate success or failure of an API request.\n\nIn general, codes in the 2xx range indicate success, codes in the 4xx range indicate an error that resulted from the provided information (e.g., a required parameter is missing), and codes in the 5xx range indicate an error with our servers.\n\n### HTTP Status Code Summary\n\n- `200 OK` - Everything worked as expected.\n\n- `400 Bad Request` - Often missing a required parameter.\n\n- `401 Unauthorized` - No valid API key provided.\n\n- `402 Request Failed` - Parameters were valid but request failed.\n\n- `403 Forbidden` - Insufficient privileges to access requested resource.\n\n- `404 Not Found` - The requested item doesn't exist.\n\n- `50x` Server errors - something went wrong on api domain's end.\n\nInput and output data must be valid JSON with appropriate Content-Type header set.\n\n### Attributes\n\n- type:\n\n  - `invalid_request_error`: Occur when your request has invalid parameters.\n  - `invitalid_auth`: Arise when there is a problem of authentication.\n  - `uknown_resource`: Occur when the resource doesn't exist.\n  - `authorization_required`: You don't have sufficient right to access the resource.\n  - `api_error`: API errors use in case of problem with api domain's servers\n\n- message:\n\n  - A human readable error giving more details about the error\n\n- fields (Optional):\n\n  - An array of parameters with an human readable message giving more details about the error.\n\n### Errors responses example\n\n+ Response 400 (application/json)\n\n        {\n            \"fields\": {\n                \"email\": [\n                    \"incorrect email address\",\n                    \"required key not provided\"\n                ],\n                \"firstname\": [\n                    \"length of value must be at least 2\",\n                    \"required key not provided\"\n                ],\n                \"lastname\": [\n                    \"length of value must be at least 2\",\n                    \"required key not provided\"\n                ]\n            },\n            \"message\": \"Validation Error\",\n            \"type\": \"invalid_request_error\"\n        }\n\n+ Response 401 (application/json)\n\n        {\n            \"message\": \"The header 'X-Auth-Token' is missing\",\n            \"type\": \"invalid_auth\"\n        }\n\n+ Response 403 (application/json)\n\n        {\n          \"message\": \"The token provided doesn't have the requested permission.\",\n          \"type\": \"authorization_required\"\n        }\n\n+ Response 404 (application/json)\n\n        {\n            \"message\": \"User not found\",\n            \"type\": \"unknown_resource\"\n        }\n\n\n"
     },
     "host": "api.scaleway.com",
     "basePath": "/",
@@ -17,7 +17,22 @@
                     "201": {
                         "description": "Created",
                         "headers": {},
-                        "examples": {}
+                        "examples": {
+                            "application/json": {
+                                "token": {
+                                    "creation_date": "2014-05-22T08:05:57.556385+00:00",
+                                    "expires": null,
+                                    "id": "9de8f869-c58e-4aa3-9208-2d4eaff5fa20",
+                                    "inherits_user_perms": true,
+                                    "permissions": [],
+                                    "roles": {
+                                        "organization": null,
+                                        "role": null
+                                    },
+                                    "user_id": "5bea0358-db40-429e-bd82-914686a7e7b9"
+                                }
+                            }
+                        }
                     }
                 },
                 "summary": "Create a token",
@@ -31,7 +46,10 @@
                         "in": "body",
                         "schema": {
                             "type": "object",
-                            "required": [],
+                            "required": [
+                                "email",
+                                "password"
+                            ],
                             "properties": {
                                 "email": {
                                     "type": "string"
@@ -40,11 +58,14 @@
                                     "type": "string"
                                 },
                                 "expires": {
-                                    "type": ""
+                                    "type": "boolean"
                                 }
                             }
                         }
                     }
+                ],
+                "produces": [
+                    "application/json"
                 ]
             },
             "get": {
@@ -69,7 +90,22 @@
                     "200": {
                         "description": "OK",
                         "headers": {},
-                        "examples": {}
+                        "examples": {
+                            "application/json": {
+                                "token": {
+                                    "creation_date": "2014-05-22T08:06:51.742826+00:00",
+                                    "expires": "2014-05-20T14:05:06.393875+00:00",
+                                    "id": "654c95b0-2cf5-41a3-b3cc-733ffba4b4b7",
+                                    "inherits_user_perms": true,
+                                    "permissions": [],
+                                    "roles": {
+                                        "organization": null,
+                                        "role": null
+                                    },
+                                    "user_id": "5bea0358-db40-429e-bd82-953016a7e2s7"
+                                }
+                            }
+                        }
                     }
                 },
                 "summary": "Retrieve a token",
@@ -85,6 +121,9 @@
                         "required": true,
                         "type": "string"
                     }
+                ],
+                "produces": [
+                    "application/json"
                 ]
             },
             "patch": {
@@ -116,7 +155,7 @@
                             "required": [],
                             "properties": {
                                 "expires": {
-                                    "type": ""
+                                    "type": "boolean"
                                 },
                                 "description": {
                                     "type": "string"
@@ -156,7 +195,41 @@
                     "200": {
                         "description": "OK",
                         "headers": {},
-                        "examples": {}
+                        "examples": {
+                            "application/json": {
+                                "organizations": [
+                                    {
+                                        "id": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                                        "name": "jsnow@got.com",
+                                        "users": [
+                                            {
+                                                "email": "jsnow@got.com",
+                                                "firstname": "John",
+                                                "fullname": "John Snow",
+                                                "id": "59a98700-8622-4495-a11a-e1efbfac5972",
+                                                "lastname": "Snow",
+                                                "organizations": [
+                                                    {
+                                                        "id": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                                                        "name": "jsnow@got.com"
+                                                    }
+                                                ],
+                                                "roles": [
+                                                    {
+                                                        "organization": {
+                                                            "id": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                                                            "name": "jsnow@got.com"
+                                                        },
+                                                        "role": "manager"
+                                                    }
+                                                ],
+                                                "ssh_public_keys": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
                     }
                 },
                 "summary": "List all organizations",
@@ -164,7 +237,35 @@
                 "tags": [
                     "Organizations"
                 ],
-                "parameters": []
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ]
+            }
+        },
+        "/organizations/{orga_id}/quotas": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "headers": {},
+                        "examples": {}
+                    }
+                },
+                "summary": "List all quotas",
+                "description": "List all Quotas of the given organization.\n\nThe response is an object that has a key called `quotas`. This key contain a standard `quotas` object.\n\n",
+                "tags": [
+                    "Organizations"
+                ],
+                "parameters": [
+                    {
+                        "name": "orga_id",
+                        "in": "path",
+                        "description": "Organization unique identifier",
+                        "required": true,
+                        "type": "string"
+                    }
+                ]
             }
         },
         "/users/{user_id}": {
@@ -198,7 +299,42 @@
                     "201": {
                         "description": "Created",
                         "headers": {},
-                        "examples": {}
+                        "examples": {
+                            "application/json": {
+                                "server": {
+                                    "bootscript": null,
+                                    "dynamic_public_ip": false,
+                                    "id": "3cb18e2d-f4f7-48f7-b452-59b88ae8fc8c",
+                                    "image": {
+                                        "id": "85917034-46b0-4cc5-8b48-f0a2245e357e",
+                                        "name": "ubuntu working"
+                                    },
+                                    "name": "my_server",
+                                    "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                                    "private_ip": null,
+                                    "public_ip": null,
+                                    "state": "running",
+                                    "tags": [
+                                        "test",
+                                        "www"
+                                    ],
+                                    "volumes": {
+                                        "0": {
+                                            "export_uri": null,
+                                            "id": "d9257116-6919-49b4-a420-dcfdff51fcb1",
+                                            "name": "vol simple snapshot",
+                                            "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                                            "server": {
+                                                "id": "3cb18e2d-f4f7-48f7-b452-59b88ae8fc8c",
+                                                "name": "my_server"
+                                            },
+                                            "size": 10000000000,
+                                            "volume_type": "l_ssd"
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 },
                 "summary": "Create a new server",
@@ -212,7 +348,12 @@
                         "in": "body",
                         "schema": {
                             "type": "object",
-                            "required": [],
+                            "required": [
+                                "name",
+                                "organization",
+                                "image",
+                                "volumes"
+                            ],
                             "properties": {
                                 "name": {
                                     "type": "string"
@@ -232,6 +373,9 @@
                             }
                         }
                     }
+                ],
+                "produces": [
+                    "application/json"
                 ]
             },
             "get": {
@@ -239,7 +383,76 @@
                     "200": {
                         "description": "OK",
                         "headers": {},
-                        "examples": {}
+                        "examples": {
+                            "application/json": {
+                                "servers": [
+                                    {
+                                        "bootscript": null,
+                                        "dynamic_public_ip": false,
+                                        "id": "741db378-6b87-46d4-a8c5-4e46a09ab1f8",
+                                        "image": {
+                                            "id": "85917034-46b0-4cc5-8b48-f0a2245e357e",
+                                            "name": "ubuntu working"
+                                        },
+                                        "name": "my_server",
+                                        "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                                        "private_ip": null,
+                                        "public_ip": null,
+                                        "state": "running",
+                                        "tags": [
+                                            "test",
+                                            "www"
+                                        ],
+                                        "volumes": {
+                                            "0": {
+                                                "export_uri": null,
+                                                "id": "c1eb8f3a-4f0b-4b95-a71c-93223e457f5a",
+                                                "name": "vol simple snapshot",
+                                                "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                                                "server": {
+                                                    "id": "741db378-6b87-46d4-a8c5-4e46a09ab1f8",
+                                                    "name": "my_server"
+                                                },
+                                                "size": 10000000000,
+                                                "volume_type": "l_ssd"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "bootscript": null,
+                                        "dynamic_public_ip": false,
+                                        "id": "0e9f85af-b6aa-401e-a00d-484f832c5024",
+                                        "image": {
+                                            "id": "85917034-46b0-4cc5-8b48-f0a2245e357e",
+                                            "name": "ubuntu working"
+                                        },
+                                        "name": "my_server",
+                                        "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                                        "private_ip": null,
+                                        "public_ip": null,
+                                        "state": "running",
+                                        "tags": [
+                                            "test",
+                                            "www"
+                                        ],
+                                        "volumes": {
+                                            "0": {
+                                                "export_uri": null,
+                                                "id": "fb09bb31-ecd9-4dff-8b55-b6e45715199d",
+                                                "name": "vol simple snapshot",
+                                                "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                                                "server": {
+                                                    "id": "0e9f85af-b6aa-401e-a00d-484f832c5024",
+                                                    "name": "my_server"
+                                                },
+                                                "size": 10000000000,
+                                                "volume_type": "l_ssd"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
                     }
                 },
                 "summary": "List all servers",
@@ -247,7 +460,10 @@
                 "tags": [
                     "Servers"
                 ],
-                "parameters": []
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ]
             }
         },
         "/servers/{server_id}": {
@@ -256,7 +472,123 @@
                     "200": {
                         "description": "OK",
                         "headers": {},
-                        "examples": {}
+                        "examples": {
+                            "application/json": {
+                                "server": {
+                                    "dynamic_ip_required": true,
+                                    "name": "cocky-albattani",
+                                    "modification_date": "2015-10-08T15:53:50.098349+00:00",
+                                    "tags": [
+                                        "hello=world",
+                                        "prod"
+                                    ],
+                                    "state_detail": "provisioning node",
+                                    "image": {
+                                        "default_bootscript": {
+                                            "kernel": {
+                                                "dtb": "dtb/pimouss-computing.dtb.4.0.5-235-docker",
+                                                "path": "kernel/pimouss-uImage-4.0.5-235-docker",
+                                                "id": "a2883579-90a2-1835-7990-a288357990a2",
+                                                "title": "Pimouss 4.0.5-235-docker"
+                                            },
+                                            "title": "4.0.5-docker #235",
+                                            "public": false,
+                                            "initrd": {
+                                                "path": "initrd/c1-uInitrd-2015.06.08",
+                                                "id": "bf341982-abbf-1419-82ab-bf341982abbf",
+                                                "title": "C1 uInitrd (2015/06/08)"
+                                            },
+                                            "bootcmdargs": {
+                                                "id": "817c19a2-9b81-1c19-a29b-817c19a29b81",
+                                                "value": "LINUX_COMMON ip=dhcp boot=local root=/dev/nbd0 nbd.max_parts=8 cgroup_enable=memory swapaccount=1"
+                                            },
+                                            "organization": "65ef1eb6-b765-1f1e-b6b7-65ef1eb6b765",
+                                            "id": "e53caaf9-43e5-1caa-f943-e53caaf943e5"
+                                        },
+                                        "creation_date": "2015-07-23T14:26:37.812947+00:00",
+                                        "name": "Docker 1.7.1",
+                                        "modification_date": "2015-09-23T14:42:22.508589+00:00",
+                                        "organization": "ea57600b-06ea-1760-0b06-ea57600b06ea",
+                                        "extra_volumes": "[]",
+                                        "arch": "arm",
+                                        "id": "d8d51776-cad8-1517-76ca-d8d51776cad8",
+                                        "root_volume": {
+                                            "size": 50000000000,
+                                            "id": "95b6f27a-5d95-16f2-7a5d-95b6f27a5d95",
+                                            "volume_type": "l_ssd",
+                                            "name": "scw-app-docker-latest-2015-07-23_16:22"
+                                        },
+                                        "public": true
+                                    },
+                                    "hostname": "cocky-albattani",
+                                    "creation_date": "2015-10-08T15:53:46.778396+00:00",
+                                    "public_ip": {
+                                        "dynamic": true,
+                                        "id": "3d53d1de-4d3d-13d1-de4d-3d53d1de4d3d",
+                                        "address": "212.47.227.255"
+                                    },
+                                    "state": "starting",
+                                    "bootscript": null,
+                                    "private_ip": "10.1.52.100",
+                                    "volumes": {
+                                        "0": {
+                                            "size": 50000000000,
+                                            "name": "cocky-albattani-scw-app-docker-latest-2015-07-23_16:22",
+                                            "modification_date": "2015-10-08T15:53:46.778396+00:00",
+                                            "organization": "d4510651-c4d4-1106-51c4-d4510651c4d4",
+                                            "export_uri": "nbd://10.1.52.110:4416",
+                                            "creation_date": "2015-10-08T15:53:46.778396+00:00",
+                                            "id": "2fd6e147-a52f-16e1-47a5-2fd6e147a52f",
+                                            "volume_type": "l_ssd",
+                                            "server": {
+                                                "id": "d2de1908-07d2-1e19-0807-d2de190807d2",
+                                                "name": "cocky-albattani"
+                                            }
+                                        },
+                                        "1": {
+                                            "size": 50000000000,
+                                            "name": "50G",
+                                            "modification_date": "2015-10-08T15:53:47.386985+00:00",
+                                            "organization": "d4510651-c4d4-1106-51c4-d4510651c4d4",
+                                            "export_uri": "nbd://10.1.52.110:4417",
+                                            "creation_date": "2015-10-08T15:53:45.542890+00:00",
+                                            "id": "43ce0396-a243-1e03-96a2-43ce0396a243",
+                                            "volume_type": "l_ssd",
+                                            "server": {
+                                                "id": "d2de1908-07d2-1e19-0807-d2de190807d2",
+                                                "name": "cocky-albattani"
+                                            }
+                                        },
+                                        "2": {
+                                            "size": 50000000000,
+                                            "name": "50G",
+                                            "modification_date": "2015-10-08T15:53:47.386869+00:00",
+                                            "organization": "d4510651-c4d4-1106-51c4-d4510651c4d4",
+                                            "export_uri": "nbd://10.1.52.110:4418",
+                                            "creation_date": "2015-10-08T15:53:46.219710+00:00",
+                                            "id": "0af1a2de-cc0a-11a2-decc-0af1a2decc0a",
+                                            "volume_type": "l_ssd",
+                                            "server": {
+                                                "id": "d2de1908-07d2-1e19-0807-d2de190807d2",
+                                                "name": "cocky-albattani"
+                                            }
+                                        }
+                                    },
+                                    "security_group": {
+                                        "id": "610ff44e-7561-1ff4-4e75-610ff44e7561",
+                                        "name": "Base group"
+                                    },
+                                    "organization": "d4510651-c4d4-1106-51c4-d4510651c4d4",
+                                    "id": "d2de1908-07d2-1e19-0807-d2de190807d2",
+                                    "location": {
+                                        "blade_id": "5",
+                                        "platform_id": "11",
+                                        "chassis_id": "11",
+                                        "node_id": "11"
+                                    }
+                                }
+                            }
+                        }
                     }
                 },
                 "summary": "Retrieve a server",
@@ -272,6 +604,9 @@
                         "required": true,
                         "type": "string"
                     }
+                ],
+                "produces": [
+                    "application/json"
                 ]
             },
             "put": {
@@ -279,7 +614,43 @@
                     "200": {
                         "description": "OK",
                         "headers": {},
-                        "examples": {}
+                        "examples": {
+                            "application/json": {
+                                "server": {
+                                    "bootscript": null,
+                                    "dynamic_public_ip": false,
+                                    "id": "741db378-6b87-46d4-a8c5-4e46a09ab1f8",
+                                    "image": {
+                                        "id": "85917034-46b0-4cc5-8b48-f0a2245e357e",
+                                        "name": "ubuntu working"
+                                    },
+                                    "name": "my_server",
+                                    "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                                    "private_ip": null,
+                                    "public_ip": null,
+                                    "state": "running",
+                                    "tags": [
+                                        "prod",
+                                        "www",
+                                        "new"
+                                    ],
+                                    "volumes": {
+                                        "0": {
+                                            "export_uri": null,
+                                            "id": "c1eb8f3a-4f0b-4b95-a71c-93223e457f5a",
+                                            "name": "vol simple snapshot",
+                                            "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                                            "server": {
+                                                "id": "741db378-6b87-46d4-a8c5-4e46a09ab1f8",
+                                                "name": "my_server"
+                                            },
+                                            "size": 10000000000,
+                                            "volume_type": "l_ssd"
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 },
                 "summary": "Update a server",
@@ -295,6 +666,9 @@
                         "required": true,
                         "type": "string"
                     }
+                ],
+                "produces": [
+                    "application/json"
                 ]
             },
             "delete": {
@@ -327,7 +701,15 @@
                     "200": {
                         "description": "OK",
                         "headers": {},
-                        "examples": {}
+                        "examples": {
+                            "application/json": {
+                                "actions": [
+                                    "poweron",
+                                    "poweroff",
+                                    "reboot"
+                                ]
+                            }
+                        }
                     }
                 },
                 "summary": "List all actions",
@@ -343,6 +725,9 @@
                         "required": true,
                         "type": "string"
                     }
+                ],
+                "produces": [
+                    "application/json"
                 ]
             },
             "post": {
@@ -350,7 +735,17 @@
                     "202": {
                         "description": "Accepted",
                         "headers": {},
-                        "examples": {}
+                        "examples": {
+                            "application/json": {
+                                "task": {
+                                    "description": "server_poweroff",
+                                    "href_from": "/servers/741db378-6b87-46d4-a8c5-4e46a09ab1f8/action",
+                                    "id": "a8a1775c-0dda-4f52-87b2-4e8101d68d6e",
+                                    "progress": "0",
+                                    "status": "pending"
+                                }
+                            }
+                        }
                     }
                 },
                 "summary": "Execute an action",
@@ -367,14 +762,22 @@
                         "type": "string"
                     },
                     {
+                        "name": "server_id",
+                        "in": "path",
+                        "description": "Server unique identifier",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
                         "name": "action",
                         "in": "body",
                         "description": "Action to execute",
                         "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     }
+                ],
+                "produces": [
+                    "application/json"
                 ]
             }
         },
@@ -384,7 +787,19 @@
                     "201": {
                         "description": "Created",
                         "headers": {},
-                        "examples": {}
+                        "examples": {
+                            "application/json": {
+                                "volume": {
+                                    "export_uri": null,
+                                    "id": "c675f420-cfeb-48ff-ba2a-9d2a4dbe3fcd",
+                                    "name": "volume-0-3",
+                                    "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                                    "server": null,
+                                    "size": 10000000000,
+                                    "volume_type": "l_ssd"
+                                }
+                            }
+                        }
                     }
                 },
                 "summary": "Create a new volume",
@@ -398,7 +813,12 @@
                         "in": "body",
                         "schema": {
                             "type": "object",
-                            "required": [],
+                            "required": [
+                                "name",
+                                "organization",
+                                "volume_type: `l_ssd`",
+                                "size"
+                            ],
                             "properties": {
                                 "name": {
                                     "type": "string"
@@ -415,6 +835,9 @@
                             }
                         }
                     }
+                ],
+                "produces": [
+                    "application/json"
                 ]
             },
             "get": {
@@ -422,7 +845,30 @@
                     "200": {
                         "description": "OK",
                         "headers": {},
-                        "examples": {}
+                        "examples": {
+                            "application/json": {
+                                "volumes": [
+                                    {
+                                        "export_uri": null,
+                                        "id": "f929fe39-63f8-4be8-a80e-1e9c8ae22a76",
+                                        "name": "volume-0-1",
+                                        "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                                        "server": null,
+                                        "size": 10000000000,
+                                        "volume_type": "l_ssd"
+                                    },
+                                    {
+                                        "export_uri": null,
+                                        "id": "0facb6b5-b117-441a-81c1-f28b1d723779",
+                                        "name": "volume-0-2",
+                                        "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                                        "server": null,
+                                        "size": 20000000000,
+                                        "volume_type": "l_ssd"
+                                    }
+                                ]
+                            }
+                        }
                     }
                 },
                 "summary": "Retrieves all volumes",
@@ -430,7 +876,10 @@
                 "tags": [
                     "Volumes"
                 ],
-                "parameters": []
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ]
             }
         },
         "/volumes/{volume_id}": {
@@ -439,7 +888,19 @@
                     "200": {
                         "description": "OK",
                         "headers": {},
-                        "examples": {}
+                        "examples": {
+                            "application/json": {
+                                "volume": {
+                                    "export_uri": null,
+                                    "id": "f929fe39-63f8-4be8-a80e-1e9c8ae22a76",
+                                    "name": "volume-0-1",
+                                    "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                                    "server": null,
+                                    "size": 10000000000,
+                                    "volume_type": "l_ssd"
+                                }
+                            }
+                        }
                     }
                 },
                 "summary": "Retrieves informations about a volume",
@@ -455,6 +916,9 @@
                         "required": true,
                         "type": "string"
                     }
+                ],
+                "produces": [
+                    "application/json"
                 ]
             },
             "delete": {
@@ -487,11 +951,27 @@
                     "200": {
                         "description": "OK",
                         "headers": {},
-                        "examples": {}
+                        "examples": {
+                            "application/json": {
+                                "snapshot": {
+                                    "base_volume": {
+                                        "id": "701a8946-ff9d-4579-95e3-1c2c2d0f892d",
+                                        "name": "vol simple snapshot"
+                                    },
+                                    "creation_date": "2014-05-22T12:10:05.596769+00:00",
+                                    "id": "f0361e7b-cbe4-4882-a999-945192b7171b",
+                                    "name": "snapshot-0-1",
+                                    "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                                    "size": 10000000000,
+                                    "state": "snapshotting",
+                                    "volume_type": "l_ssd"
+                                }
+                            }
+                        }
                     }
                 },
                 "summary": "Create a snapshot",
-                "description": "Create a new server\n\nThe response is an object that has a key called `snapshot`. This key contain a standard `snapshot` object.\n\n",
+                "description": "Create a new snapshot\n\nThe response is an object that has a key called `snapshot`. This key contain a standard `snapshot` object.\n\n",
                 "tags": [
                     "Snapshots"
                 ],
@@ -501,7 +981,11 @@
                         "in": "body",
                         "schema": {
                             "type": "object",
-                            "required": [],
+                            "required": [
+                                "name",
+                                "organization",
+                                "volume_id"
+                            ],
                             "properties": {
                                 "name": {
                                     "type": "string"
@@ -515,6 +999,9 @@
                             }
                         }
                     }
+                ],
+                "produces": [
+                    "application/json"
                 ]
             },
             "get": {
@@ -522,7 +1009,38 @@
                     "200": {
                         "description": "OK",
                         "headers": {},
-                        "examples": {}
+                        "examples": {
+                            "application/json": {
+                                "snapshots": [
+                                    {
+                                        "base_volume": {
+                                            "id": "09a4184c-733b-43c8-99c3-f1dde30536fe",
+                                            "name": "vol simple snapshot"
+                                        },
+                                        "creation_date": "2014-05-22T12:11:06.055998+00:00",
+                                        "id": "6f418e5f-b42d-4423-a0b5-349c74c454a4",
+                                        "name": "snapshot-0-1",
+                                        "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                                        "size": 10000000000,
+                                        "state": "snapshotting",
+                                        "volume_type": "l_ssd"
+                                    },
+                                    {
+                                        "base_volume": {
+                                            "id": "09a4184c-733b-43c8-99c3-f1dde30536fe",
+                                            "name": "vol simple snapshot"
+                                        },
+                                        "creation_date": "2014-05-22T12:13:09.877961+00:00",
+                                        "id": "c6ff5501-eb35-44b8-aa01-8777211a830b",
+                                        "name": "snapshot-0-2",
+                                        "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                                        "size": 10000000000,
+                                        "state": "snapshotting",
+                                        "volume_type": "l_ssd"
+                                    }
+                                ]
+                            }
+                        }
                     }
                 },
                 "summary": "List all snapshots",
@@ -530,7 +1048,10 @@
                 "tags": [
                     "Snapshots"
                 ],
-                "parameters": []
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ]
             }
         },
         "/snapshots/{snapshot_id}": {
@@ -539,7 +1060,23 @@
                     "200": {
                         "description": "OK",
                         "headers": {},
-                        "examples": {}
+                        "examples": {
+                            "application/json": {
+                                "snapshot": {
+                                    "base_volume": {
+                                        "id": "09a4184c-733b-43c8-99c3-f1dde30536fe",
+                                        "name": "vol simple snapshot"
+                                    },
+                                    "creation_date": "2014-05-22T12:11:06.055998+00:00",
+                                    "id": "6f418e5f-b42d-4423-a0b5-349c74c454a4",
+                                    "name": "snapshot-0-1",
+                                    "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                                    "size": 10000000000,
+                                    "state": "snapshotting",
+                                    "volume_type": "l_ssd"
+                                }
+                            }
+                        }
                     }
                 },
                 "summary": "Retrieve a snapshot",
@@ -555,6 +1092,9 @@
                         "required": true,
                         "type": "string"
                     }
+                ],
+                "produces": [
+                    "application/json"
                 ]
             },
             "put": {
@@ -562,7 +1102,23 @@
                     "200": {
                         "description": "OK",
                         "headers": {},
-                        "examples": {}
+                        "examples": {
+                            "application/json": {
+                                "snapshot": {
+                                    "base_volume": {
+                                        "id": "09a4184c-733b-43c8-99c3-f1dde30536fe",
+                                        "name": "vol simple snapshot"
+                                    },
+                                    "creation_date": "2014-05-22T12:11:06.055998+00:00",
+                                    "id": "6f418e5f-b42d-4423-a0b5-349c74c454a4",
+                                    "name": "snapshot-0-1",
+                                    "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                                    "size": 10000000000,
+                                    "state": "snapshotting",
+                                    "volume_type": "l_ssd"
+                                }
+                            }
+                        }
                     }
                 },
                 "summary": "Update a snapshot",
@@ -583,7 +1139,9 @@
                         "in": "body",
                         "schema": {
                             "type": "object",
-                            "required": [],
+                            "required": [
+                                "organization"
+                            ],
                             "properties": {
                                 "organization": {
                                     "type": "string"
@@ -591,6 +1149,9 @@
                             }
                         }
                     }
+                ],
+                "produces": [
+                    "application/json"
                 ]
             },
             "delete": {
@@ -623,7 +1184,27 @@
                     "201": {
                         "description": "Created",
                         "headers": {},
-                        "examples": {}
+                        "examples": {
+                            "application/json": {
+                                "image": {
+                                    "arch": "arm",
+                                    "creation_date": "2014-05-22T12:56:56.984011+00:00",
+                                    "extra_volumes": "[]",
+                                    "from_image": null,
+                                    "from_server": null,
+                                    "id": "98bf3ac2-a1f5-471d-8c8f-1b706ab57ef0",
+                                    "marketplace_key": null,
+                                    "modification_date": "2014-05-22T12:56:56.984011+00:00",
+                                    "name": "my_image",
+                                    "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                                    "public": false,
+                                    "root_volume": {
+                                        "id": "f0361e7b-cbe4-4882-a999-945192b7171b",
+                                        "name": "vol-0-1"
+                                    }
+                                }
+                            }
+                        }
                     }
                 },
                 "summary": "Create a new image",
@@ -637,7 +1218,12 @@
                         "in": "body",
                         "schema": {
                             "type": "object",
-                            "required": [],
+                            "required": [
+                                "organization",
+                                "name",
+                                "arch",
+                                "root_volume"
+                            ],
                             "properties": {
                                 "organization": {
                                     "type": "string"
@@ -654,6 +1240,9 @@
                             }
                         }
                     }
+                ],
+                "produces": [
+                    "application/json"
                 ]
             },
             "get": {
@@ -661,7 +1250,46 @@
                     "200": {
                         "description": "OK",
                         "headers": {},
-                        "examples": {}
+                        "examples": {
+                            "application/json": {
+                                "images": [
+                                    {
+                                        "arch": "arm",
+                                        "creation_date": "2014-05-22T12:56:56.984011+00:00",
+                                        "extra_volumes": "[]",
+                                        "from_image": null,
+                                        "from_server": null,
+                                        "id": "98bf3ac2-a1f5-471d-8c8f-1b706ab57ef0",
+                                        "marketplace_key": null,
+                                        "modification_date": "2014-05-22T12:56:56.984011+00:00",
+                                        "name": "my_image",
+                                        "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                                        "public": false,
+                                        "root_volume": {
+                                            "id": "f0361e7b-cbe4-4882-a999-945192b7171b",
+                                            "name": "vol-0-1"
+                                        }
+                                    },
+                                    {
+                                        "arch": "arm",
+                                        "creation_date": "2014-05-22T12:57:22.514299+00:00",
+                                        "extra_volumes": "[]",
+                                        "from_image": null,
+                                        "from_server": null,
+                                        "id": "1f73d975-35fc-4365-9ead-8dab7e54152f",
+                                        "marketplace_key": null,
+                                        "modification_date": "2014-05-22T12:57:22.514299+00:00",
+                                        "name": "my_image_1",
+                                        "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                                        "public": false,
+                                        "root_volume": {
+                                            "id": "f0361e7b-cbe4-4882-a999-945192b7171b",
+                                            "name": "vol-0-2"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
                     }
                 },
                 "summary": "List all images",
@@ -669,7 +1297,10 @@
                 "tags": [
                     "Images"
                 ],
-                "parameters": []
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ]
             }
         },
         "/images/{image_id}": {
@@ -678,7 +1309,27 @@
                     "200": {
                         "description": "OK",
                         "headers": {},
-                        "examples": {}
+                        "examples": {
+                            "application/json": {
+                                "image": {
+                                    "arch": "arm",
+                                    "creation_date": "2014-05-22T12:56:56.984011+00:00",
+                                    "extra_volumes": "[]",
+                                    "from_image": null,
+                                    "from_server": null,
+                                    "id": "98bf3ac2-a1f5-471d-8c8f-1b706ab57ef0",
+                                    "marketplace_key": null,
+                                    "modification_date": "2014-05-22T12:56:56.984011+00:00",
+                                    "name": "my_image",
+                                    "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                                    "public": false,
+                                    "root_volume": {
+                                        "id": "f0361e7b-cbe4-4882-a999-945192b7171b",
+                                        "name": "vol-0-1"
+                                    }
+                                }
+                            }
+                        }
                     }
                 },
                 "summary": "Retrieves an image",
@@ -694,6 +1345,9 @@
                         "required": true,
                         "type": "string"
                     }
+                ],
+                "produces": [
+                    "application/json"
                 ]
             },
             "put": {
@@ -701,7 +1355,27 @@
                     "200": {
                         "description": "OK",
                         "headers": {},
-                        "examples": {}
+                        "examples": {
+                            "application/json": {
+                                "image": {
+                                    "arch": "arm",
+                                    "creation_date": "2014-05-22T12:56:56.984011+00:00",
+                                    "extra_volumes": "[]",
+                                    "from_image": null,
+                                    "from_server": null,
+                                    "id": "98bf3ac2-a1f5-471d-8c8f-1b706ab57ef0",
+                                    "marketplace_key": null,
+                                    "modification_date": "2014-05-22T13:00:15.462764+00:00",
+                                    "name": "my_image_old",
+                                    "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                                    "public": false,
+                                    "root_volume": {
+                                        "id": "f0361e7b-cbe4-4882-a999-945192b7171b",
+                                        "name": "TOTO"
+                                    }
+                                }
+                            }
+                        }
                     }
                 },
                 "summary": "Update an image",
@@ -717,6 +1391,9 @@
                         "required": true,
                         "type": "string"
                     }
+                ],
+                "produces": [
+                    "application/json"
                 ]
             },
             "delete": {
@@ -749,7 +1426,16 @@
                     "201": {
                         "description": "Created",
                         "headers": {},
-                        "examples": {}
+                        "examples": {
+                            "application/json": {
+                                "ip": {
+                                    "address": "212.47.226.88",
+                                    "id": "b50cd740-892d-47d3-8cbf-88510ef626e7",
+                                    "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                                    "server": null
+                                }
+                            }
+                        }
                     }
                 },
                 "summary": "Create a new IP",
@@ -763,7 +1449,9 @@
                         "in": "body",
                         "schema": {
                             "type": "object",
-                            "required": [],
+                            "required": [
+                                "organization"
+                            ],
                             "properties": {
                                 "organization": {
                                     "type": "string"
@@ -771,6 +1459,9 @@
                             }
                         }
                     }
+                ],
+                "produces": [
+                    "application/json"
                 ]
             },
             "get": {
@@ -778,7 +1469,18 @@
                     "200": {
                         "description": "OK",
                         "headers": {},
-                        "examples": {}
+                        "examples": {
+                            "application/json": {
+                                "ips": [
+                                    {
+                                        "address": "212.47.226.88",
+                                        "id": "b50cd740-892d-47d3-8cbf-88510ef626e7",
+                                        "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                                        "server": null
+                                    }
+                                ]
+                            }
+                        }
                     }
                 },
                 "summary": "Retrieves all IPs addresses",
@@ -786,7 +1488,10 @@
                 "tags": [
                     "IPs"
                 ],
-                "parameters": []
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ]
             }
         },
         "/ips/{ip_id}": {
@@ -795,7 +1500,16 @@
                     "200": {
                         "description": "OK",
                         "headers": {},
-                        "examples": {}
+                        "examples": {
+                            "application/json": {
+                                "ip": {
+                                    "address": "212.47.226.88",
+                                    "id": "b50cd740-892d-47d3-8cbf-88510ef626e7",
+                                    "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                                    "server": null
+                                }
+                            }
+                        }
                     }
                 },
                 "summary": "Retrieve an IP address",
@@ -811,6 +1525,9 @@
                         "required": true,
                         "type": "string"
                     }
+                ],
+                "produces": [
+                    "application/json"
                 ]
             },
             "put": {
@@ -818,7 +1535,19 @@
                     "200": {
                         "description": "OK",
                         "headers": {},
-                        "examples": {}
+                        "examples": {
+                            "application/json": {
+                                "ip": {
+                                    "address": "212.47.226.88",
+                                    "id": "b50cd740-892d-47d3-8cbf-88510ef626e7",
+                                    "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                                    "server": {
+                                        "id": "c2d8994f-1582-413e-8d48-c53076db06cc",
+                                        "name": "default_server_name - acfb51"
+                                    }
+                                }
+                            }
+                        }
                     }
                 },
                 "summary": "Attach an IP address",
@@ -834,6 +1563,9 @@
                         "required": true,
                         "type": "string"
                     }
+                ],
+                "produces": [
+                    "application/json"
                 ]
             },
             "delete": {
@@ -866,7 +1598,19 @@
                     "201": {
                         "description": "Created",
                         "headers": {},
-                        "examples": {}
+                        "examples": {
+                            "application/json": {
+                                "security_group": {
+                                    "description": "Security group 01",
+                                    "enable_default_security": true,
+                                    "id": "adb5887b-5ab5-445a-ae70-276df95a9852",
+                                    "name": "security-group-01",
+                                    "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                                    "organization_default": false,
+                                    "servers": []
+                                }
+                            }
+                        }
                     }
                 },
                 "summary": "Create a security group",
@@ -880,7 +1624,11 @@
                         "in": "body",
                         "schema": {
                             "type": "object",
-                            "required": [],
+                            "required": [
+                                "organization",
+                                "name",
+                                "description"
+                            ],
                             "properties": {
                                 "organization": {
                                     "type": "string"
@@ -894,6 +1642,9 @@
                             }
                         }
                     }
+                ],
+                "produces": [
+                    "application/json"
                 ]
             },
             "get": {
@@ -901,7 +1652,30 @@
                     "200": {
                         "description": "OK",
                         "headers": {},
-                        "examples": {}
+                        "examples": {
+                            "application/json": {
+                                "security_groups": [
+                                    {
+                                        "description": "Base security group",
+                                        "enable_default_security": true,
+                                        "id": "000a115d-2852-4b1a-9ce8-47f1134ba95a",
+                                        "name": "Base group",
+                                        "organization": "ecc1c86a-eabb-43a7-9c0a-77e371753c0a",
+                                        "organization_default": true,
+                                        "servers": [
+                                            {
+                                                "id": "b5614869-1967-9ce8-8cd2-801febf9a3f9",
+                                                "name": "scw-9b0823"
+                                            },
+                                            {
+                                                "id": "4167bf23-9ce8-4790-2852-d7c5b86934df",
+                                                "name": "scw-9b088e"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
                     }
                 },
                 "summary": "List all security groups",
@@ -909,7 +1683,10 @@
                 "tags": [
                     "Security groups"
                 ],
-                "parameters": []
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ]
             }
         },
         "/security_groups/{group_id}": {
@@ -918,7 +1695,28 @@
                     "200": {
                         "description": "OK",
                         "headers": {},
-                        "examples": {}
+                        "examples": {
+                            "application/json": {
+                                "security_group": {
+                                    "description": "Base security group",
+                                    "enable_default_security": true,
+                                    "id": "000a115d-2852-4b1a-9ce8-47f1134ba95a",
+                                    "name": "Base group",
+                                    "organization": "ecc1c86a-eabb-43a7-9c0a-77e371753c0a",
+                                    "organization_default": true,
+                                    "servers": [
+                                        {
+                                            "id": "b5614869-1967-9ce8-8cd2-801febf9a3f9",
+                                            "name": "scw-9b0823"
+                                        },
+                                        {
+                                            "id": "4167bf23-9ce8-4790-2852-d7c5b86934df",
+                                            "name": "scw-9b088e"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
                     }
                 },
                 "summary": "Retrieves a security group",
@@ -934,6 +1732,9 @@
                         "required": true,
                         "type": "string"
                     }
+                ],
+                "produces": [
+                    "application/json"
                 ]
             },
             "put": {
@@ -941,7 +1742,28 @@
                     "200": {
                         "description": "OK",
                         "headers": {},
-                        "examples": {}
+                        "examples": {
+                            "application/json": {
+                                "security_group": {
+                                    "description": "Security group 02",
+                                    "enable_default_security": true,
+                                    "id": "000a115d-2852-4b1a-9ce8-47f1134ba95a",
+                                    "name": "security-group-02",
+                                    "organization": "ecc1c86a-eabb-43a7-9c0a-77e371753c0a",
+                                    "organization_default": true,
+                                    "servers": [
+                                        {
+                                            "id": "b5614869-1967-9ce8-8cd2-801febf9a3f9",
+                                            "name": "scw-9b0823"
+                                        },
+                                        {
+                                            "id": "4167bf23-9ce8-4790-2852-d7c5b86934df",
+                                            "name": "scw-9b088e"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
                     }
                 },
                 "summary": "Update a security group",
@@ -957,6 +1779,9 @@
                         "required": true,
                         "type": "string"
                     }
+                ],
+                "produces": [
+                    "application/json"
                 ]
             },
             "delete": {
@@ -989,7 +1814,21 @@
                     "201": {
                         "description": "Created",
                         "headers": {},
-                        "examples": {}
+                        "examples": {
+                            "application/json": {
+                                "rule": {
+                                    "direction": "inbound",
+                                    "protocol": "TCP",
+                                    "ip_range": "0.0.0.0/0",
+                                    "dest_port_from": null,
+                                    "action": "drop",
+                                    "position": 2,
+                                    "dest_port_to": null,
+                                    "editable": null,
+                                    "id": "ef2136c9-6c21-491a-b238-b38de24726a7"
+                                }
+                            }
+                        }
                     }
                 },
                 "summary": "Create a new rule",
@@ -1010,7 +1849,12 @@
                         "in": "body",
                         "schema": {
                             "type": "object",
-                            "required": [],
+                            "required": [
+                                "action",
+                                "direction",
+                                "ip_range",
+                                "protocol"
+                            ],
                             "properties": {
                                 "organization": {
                                     "type": "string"
@@ -1033,6 +1877,9 @@
                             }
                         }
                     }
+                ],
+                "produces": [
+                    "application/json"
                 ]
             },
             "get": {
@@ -1040,7 +1887,45 @@
                     "200": {
                         "description": "OK",
                         "headers": {},
-                        "examples": {}
+                        "examples": {
+                            "application/json": {
+                                "rules": [
+                                    {
+                                        "direction": "outbound",
+                                        "protocol": "TCP",
+                                        "ip_range": "0.0.0.0/0",
+                                        "dest_port_from": 25,
+                                        "action": "drop",
+                                        "position": 1,
+                                        "dest_port_to": null,
+                                        "editable": false,
+                                        "id": "58909be7-d17c-4ac8-9eb3-23d5fc58abc5"
+                                    },
+                                    {
+                                        "direction": "outbound",
+                                        "protocol": "TCP",
+                                        "ip_range": "0.0.0.0/0",
+                                        "dest_port_from": 465,
+                                        "action": "drop",
+                                        "position": 2,
+                                        "dest_port_to": null,
+                                        "editable": false,
+                                        "id": "25680235-108b-4bbc-8e25-114303d950bd"
+                                    },
+                                    {
+                                        "direction": "outbound",
+                                        "protocol": "TCP",
+                                        "ip_range": "0.0.0.0/0",
+                                        "dest_port_from": 587,
+                                        "action": "drop",
+                                        "position": 3,
+                                        "dest_port_to": null,
+                                        "editable": false,
+                                        "id": "4a31b633-118e-4900-bd52-facf1085fc8d"
+                                    }
+                                ]
+                            }
+                        }
                     }
                 },
                 "summary": "List all rules",
@@ -1056,6 +1941,9 @@
                         "required": true,
                         "type": "string"
                     }
+                ],
+                "produces": [
+                    "application/json"
                 ]
             }
         },
@@ -1065,7 +1953,21 @@
                     "200": {
                         "description": "OK",
                         "headers": {},
-                        "examples": {}
+                        "examples": {
+                            "application/json": {
+                                "rule": {
+                                    "direction": "outbound",
+                                    "protocol": "TCP",
+                                    "ip_range": "0.0.0.0/0",
+                                    "dest_port_from": null,
+                                    "action": "drop",
+                                    "position": 2,
+                                    "dest_port_to": null,
+                                    "editable": null,
+                                    "id": "ef2136c9-6c21-491a-b238-b38de24726a7"
+                                }
+                            }
+                        }
                     }
                 },
                 "summary": "Update a security rule",
@@ -1088,6 +1990,9 @@
                         "required": true,
                         "type": "string"
                     }
+                ],
+                "produces": [
+                    "application/json"
                 ]
             },
             "get": {
@@ -1095,7 +2000,21 @@
                     "200": {
                         "description": "OK",
                         "headers": {},
-                        "examples": {}
+                        "examples": {
+                            "application/json": {
+                                "rule": {
+                                    "direction": "outbound",
+                                    "protocol": "TCP",
+                                    "ip_range": "0.0.0.0/0",
+                                    "dest_port_from": null,
+                                    "action": "drop",
+                                    "position": 2,
+                                    "dest_port_to": null,
+                                    "editable": null,
+                                    "id": "ef2136c9-6c21-491a-b238-b38de24726a7"
+                                }
+                            }
+                        }
                     }
                 },
                 "summary": "Retrieves a security rule",
@@ -1118,6 +2037,9 @@
                         "required": true,
                         "type": "string"
                     }
+                ],
+                "produces": [
+                    "application/json"
                 ]
             },
             "delete": {
@@ -1157,7 +2079,9 @@
                     "200": {
                         "description": "OK",
                         "headers": {},
-                        "examples": {}
+                        "examples": {
+                            "plain/text": "NAME='Server 2'\nTAGS=0\nPUBLIC_IP=42.1.2.3\nSSH_PUBLIC_KEYS=2\nSSH_PUBLIC_KEYS_0='ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCjHvTHk5QY+JZdCvAep6APwOhZvIimlC4aybrXkGSBxpNeZI1f+AexDuFFWGZPb1y135pgTAc7VXpKD2FU2xd4EwsSTHaBcaBIs1HkhpFScTwN15IfLiefIHgjgveP/8U8AKQvCK7oecz3egjvqNtBDDj9cHySpQ6w5Zq/rtF7Ku8xAfBa78NEQrwaYvdfHqI/1APeoo61MJse+xZH2LVHX1EZp79jRbHny/0WkZifVXudDCmM9aqI3G1ZgWTWvFxHW/HTkSLz1v8OHD1ZPOEjIIKLxCoYE4kukK2eVZVUWFb+iU+u6GunwqWUa6W/g+0NzpEoSHVcasIC88d3tBZD'\nSSH_PUBLIC_KEYS_1='ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAutWtCIFyrtcpxBevMyDrNlYabV6cCVPjfWwfuKABofuWwCSX8gP2gSnmjQCdtTwYnz/vAuAXbKxn8pxtUy4c24oRvtwqHpEsFDMpzzMzWtghQFOHEd7NWzda3yDGCaJ8OFD1IkiFad5QNKmOt8nlERBUK9cwbPjzhTnP/o2Odn5nJJ8WySn0/TWwMaHH6hpZTtKMSrIn06Fo5MviPfeZ9Loe8IfgV7llB7ITMFTUKP5vPVvMlPJi8MYeo0AYmhFhbTO5wWj8hK8AJELF9RwMCehcsxjDRxKKbxiv9RL3yIdBH0dftlaNX5rYazRp4zB2BYvfPNjhpTqrY2RdPYAvTw=='\nPRIVATE_IP=10.42.1.2\nVOLUMES=0\nORGANIZATION=11111111-1111-4111-8111-111111111111\nID=9fc9a037-5eaa-4073-9919-63adbe400ab9\n"
+                        }
                     }
                 },
                 "summary": "Serves pimouss metadata",
@@ -1173,9 +2097,34 @@
                         "required": false,
                         "type": "string"
                     }
+                ],
+                "produces": [
+                    "plain/text"
                 ]
             }
         }
     },
-    "definitions": {}
+    "definitions": {
+        "Tokens": {},
+        "Token": {},
+        "Organizations": {},
+        "Quotas": {},
+        "User": {},
+        "Servers": {},
+        "Server": {},
+        "Actions": {},
+        "Volumes": {},
+        "Volume": {},
+        "Snapshots": {},
+        "Snapshot": {},
+        "Images": {},
+        "Operation on a single image": {},
+        "IPs": {},
+        "IP": {},
+        "Security Groups": {},
+        "Operation on a security groups": {},
+        "Manage rules": {},
+        "Operation on a security rule": {},
+        "server metadata": {}
+    }
 }
