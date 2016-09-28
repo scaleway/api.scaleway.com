@@ -100,7 +100,7 @@ Input and output data must be valid JSON with appropriate Content-Type header se
 ### Attributes
 
 - type:
- 
+
   - `invalid_request_error`: Occur when your request has invalid parameters.
   - `invitalid_auth`: Arise when there is a problem of authentication.
   - `unknown_resource`: Occur when the resource doesn't exist.
@@ -108,14 +108,14 @@ Input and output data must be valid JSON with appropriate Content-Type header se
   - `api_error`: API errors use in case of problem with api domain's servers
 
 - message:
- 
+
   - A human readable error giving more details about the error
 
 - fields (Optional):
 
   - An array of parameters with an human readable message giving more details about the error.
 
-### Errors responses example 
+### Errors responses example
 
 + Response 400 (application/json)
 
@@ -158,3 +158,46 @@ Input and output data must be valid JSON with appropriate Content-Type header se
             "message": "User not found",
             "type": "unknown_resource"
         }
+
+### Pagination
+
+Most of listing requests receive a paginated response. Your client needs to
+handle the pagination transparently as Scaleway reserves the right to paginate
+any non-paginted API endpoint at anytime without warning.
+
+
+**Paginated request**
+
+Requests against paginated endpoints accept two querystring arguments:
+
+* *page*, a positive integer to choose the page to display.
+* *per_page*, an positive integer lower or equal to 100 to select the number of
+  items to display.
+
+Paginated endpoint usually also accept filters to search and sort results.
+These filters are documented along each endpoint documentation.
+
+**Paginated response**
+
+```
+% curl -H 'X-Auth-Token: <token>' 'https://api.scaleway.com/images/?page=2&per_page=10' -i
+HTTP/1.0 200 OK
+[...]
+X-Total-Count: 209
+Link: </images/?page=1&per_page=10>; rel="first",</images/?page=1&per_page=10>; rel="previous",</images/?page=3&per_page=10>; rel="next",</images/?page=21&per_page=10>; rel="last"
+[...]
+```
+
+The *X-Total-Count* header contains the total number of items for the resource.
+
+The *Link* header as specified by [rfc
+5988](https://tools.ietf.org/html/rfc5988) helps to navigate between pages.
+Each programming langage has a specific way to parse it. With Python for
+example, the *Link* header can be parsed with
+[python-requests](http://docs.python-requests.org/en/master/):
+
+```python
+>>> response = requests.get('https://api.scaleway.com/images', headers={'X-Auth-Token': '<token>'})
+>>> print response.links
+{'last': {'url': '/images?page=5&per_page=50', 'rel': 'last'}, 'next': {'url': '/images?page=2&per_page=50', 'rel': 'next'}}
+```

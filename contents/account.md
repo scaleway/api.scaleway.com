@@ -1,7 +1,7 @@
 ### group Tokens
 
 A Token is an identifier associated with your account. We use this token to authenticate commands in our APIs.
- 
+
 #### Tokens [/tokens]
 
 ##### Create a token [POST]
@@ -28,7 +28,7 @@ The response is an object that has a key called `token`. This key contain a stan
 + Response 201
 
     + Headers (application/json)
-           
+
             location: https://account.cloud.online.net/tokens/9de8f869-c58e-4aa3-9208-2d4eaff5fa20
 
     + Body
