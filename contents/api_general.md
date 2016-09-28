@@ -103,7 +103,7 @@ Input and output data must be valid JSON with appropriate Content-Type header se
  
   - `invalid_request_error`: Occur when your request has invalid parameters.
   - `invitalid_auth`: Arise when there is a problem of authentication.
-  - `uknown_resource`: Occur when the resource doesn't exist.
+  - `unknown_resource`: Occur when the resource doesn't exist.
   - `authorization_required`: You don't have sufficient right to access the resource.
   - `api_error`: API errors use in case of problem with api domain's servers
 
