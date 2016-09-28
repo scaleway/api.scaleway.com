@@ -174,7 +174,7 @@ Requests against paginated endpoints accept two querystring arguments:
 * *per_page*, an positive integer lower or equal to 100 to select the number of
   items to display.
 
-Paginated endpoint usually also accept filters to search and sort results.
+Paginated endpoints usually also accept filters to search and sort results.
 These filters are documented along each endpoint documentation.
 
 **Paginated response**
