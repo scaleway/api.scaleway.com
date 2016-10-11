@@ -6,7 +6,7 @@ A snapshot is a full-volume copy stored in our secure data centers.
 
 ##### Create a snapshot [POST]
 
-Create a new server
+Create a new snapshot.
 
 The response is an object that has a key called `snapshot`. This key contain a standard `snapshot` object.
 
