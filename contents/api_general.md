@@ -7,10 +7,11 @@ All features you will find in the web control panel are also available through t
 
 ## Request and response
 
-Our api works over https and is accessed from two endpoint:
+Our API works over https and is accessed from several endpoints:
 
-- `account.scaleway.com` domain related to account actions
-- `api.scaleway.com` domain related to compute actions
+- `account.scaleway.com` for Account related actions.
+- `cp-<region>.scaleway.com` for Compute Power related actions, where
+  `<region>` is `par1` or `ams1`.
 
 All data is sent and received as json.
 
@@ -18,19 +19,19 @@ All data is sent and received as json.
 
 Requests are made of two components:
 
-- Base URL: `https://api.scaleway.com`
+- Base URL: `https://cp-par1.scaleway.com` or `https://cp-ams1.scaleway.com`
 - Resource path: `servers`
 
 To construct a proper request, you need to format the URL as follows:
 
-`https://api.scaleway.com/{resource}`
+`https://cp-<region>.scaleway.com/{resource}`
 
-Example: `https://api.scaleway.com/volumes/f929fe39-63f8-4be8-a80e-1e9c8ae22a76`
+Example: `https://cp-par1.scaleway.com/volumes/f929fe39-63f8-4be8-a80e-1e9c8ae22a76`
 
 The following code is an example request to retrieve detailed informations about a volume
 
 ```
-% curl -H 'X-Auth-Token: 017ce0ce-20ec-4d4ez-b44c-e561a23481d2c' -H 'Content-Type: application/json' https://api.scaleway.com/volumes/f929fe39-63f8-4be8-a80e-1e9c8ae22a76 -i
+% curl -H 'X-Auth-Token: 017ce0ce-20ec-4d4ez-b44c-e561a23481d2c' -H 'Content-Type: application/json' https://cp-par1.scaleway.com/volumes/f929fe39-63f8-4be8-a80e-1e9c8ae22a76 -i
 
 HTTP/1.1 200 OK
 Server: nginx
@@ -180,7 +181,7 @@ These filters are documented along each endpoint documentation.
 **Paginated response**
 
 ```
-% curl -H 'X-Auth-Token: <token>' 'https://api.scaleway.com/images/?page=2&per_page=10' -i
+% curl -H 'X-Auth-Token: <token>' 'https://cp-par1.scaleway.com/images/?page=2&per_page=10' -i
 HTTP/1.0 200 OK
 [...]
 X-Total-Count: 209
@@ -197,7 +198,7 @@ example, the *Link* header can be parsed with
 [python-requests](http://docs.python-requests.org/en/master/):
 
 ```python
->>> response = requests.get('https://api.scaleway.com/images', headers={'X-Auth-Token': '<token>'})
+>>> response = requests.get('https://cp-par1.scaleway.com/images', headers={'X-Auth-Token': '<token>'})
 >>> print response.links
 {'last': {'url': '/images?page=5&per_page=50', 'rel': 'last'}, 'next': {'url': '/images?page=2&per_page=50', 'rel': 'next'}}
 ```

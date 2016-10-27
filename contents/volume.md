@@ -27,10 +27,10 @@ The response is an object that has a key called `volume`. This key contain a sta
         }
 
 + Response 201
- 
+
     + Headers (application/json)
-                
-            https://api.scaleway.com/volumes/c675f420-cfeb-48ff-ba2a-9d2a4dbe3fcd
+
+            https://cp-par1.scaleway.com/volumes/c675f420-cfeb-48ff-ba2a-9d2a4dbe3fcd
 
     + Body
 
