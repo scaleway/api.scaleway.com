@@ -16,7 +16,7 @@ The response is an object that has a key called `server`. This key contain a sta
     + organization (required, string, `000a115d-2852-4b0a-9ce8-47f1134ba95a`)... Organization unique identifier
     + image (required, string, `85917034-46b0-4cc5-8b48-f0a2245e357e`)... Image unique identifier
     + volumes (required, list, `volumes: {1: {name: "vol_demo", organization: "ecc1c86a-eabb-43a7-9c0a-77e371753c0a", size: 10000000000, volume_type: "l_sdd"`)... A list of volumes identifier to be attached to the server
-    + commercial_type (optional, string, `commercial_type: "VC1S"`)... The type of the server you want to create (C1, VC1S, VC1M, VC1L, C2S, C2M, C2L).
+    + type (optional, string, `type: "VC1S"`)... The type of the server you want to create (C1, VC1S, VC1M, VC1L, C2S, C2M, C2L).
     + tags (optional, list, `[test, www]`)... A list of tags
     + enable_ipv6 (optional, boolean, `enable_ipv6: true`)... Enable IPv6 on the server.
     
@@ -28,7 +28,7 @@ The response is an object that has a key called `server`. This key contain a sta
               "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
               "name": "my_server",
               "image": "85917034-46b0-4cc5-8b48-f0a2245e357e",
-              "commercial_type": "VC1S",
+              "type": "VC1S",
               "tags": ["test", "www"],
               "enable_ipv6": true
             }
@@ -57,7 +57,7 @@ The response is an object that has a key called `server`. This key contain a sta
             "enable_ipv6": true,
             "state": "stopped",
             "ipv6": null,
-            "commercial_type": "VC1S",
+            "type": "VC1S",
             "arch": "x86_64",
             "tags": [
               "test",
