@@ -5,9 +5,16 @@ Resources related to server Metadata available from your servers at `http://169.
 #### Server metadata [/conf{?format}]
 
 + Parameters
-    + format (optional, string, `json`)... Rendering format
+    + format (enum[string], optional) - Rendering format
+
+        + Default: `sh`
+
+        + Members
+            + `sh`
+            + `json`
 
 ##### Serves server metadata [GET]
+
 Serves instance metadata using its own IP address as authentication token.
 
 + Response 200 (application/json)
