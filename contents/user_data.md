@@ -45,7 +45,6 @@ Get the keys of available User Data.
 + Parameters
     + key_id: mykey (requires, string)
 
-
 ##### Create/Edit User Data [PATCH]
 
 + Request User Data content
@@ -55,8 +54,11 @@ Get the keys of available User Data.
     + Body
         supervalue
 
-
 ##### Show User Data [GET]
 
 + Response 200 (text/plain)
     supervalue
+
+##### Delete User Data [DELETE]
+
++ Response 204
