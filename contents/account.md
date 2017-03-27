@@ -10,10 +10,12 @@ Authenticates a user against their username, password, and then returns a new To
 
 The response is an object that has a key called `token`. This key contain a standard `token` object.
 
-+ Parameters
-    + email (required, string, `jsnow@got.com`)... User email
-    + password (required, string, `winteriscoming`)... User password
-    + expires (optional, boolean, `false`)... Set if you want a Token wich doesn't expire (default: true)
++ Attributes
+
+    + email: `jsnow@got.com` (required, string) - User email
+    + password: `winteriscoming` (required, string) - User password
+    + expires (optional, boolean) - Set if you want a Token wich doesn't expire
+        + Default: `true`
 
 + Request (application/json)
 
@@ -29,7 +31,7 @@ The response is an object that has a key called `token`. This key contain a stan
 
     + Headers (application/json)
 
-            location: https://account.cloud.online.net/tokens/9de8f869-c58e-4aa3-9208-2d4eaff5fa20
+            Location: https://account.cloud.online.net/tokens/9de8f869-c58e-4aa3-9208-2d4eaff5fa20
 
     + Body
 
@@ -91,7 +93,7 @@ The response is an object that has a key called `tokens`. This key contain an ar
 #### Token [/tokens/{token_id}]
 
 + Parameters
-    + token_id (required, string, `654c95b0-2cf5-41a3-b3cc-733ffba4b4b7`)... Token unique identifier
+    + token_id: `654c95b0-2cf5-41a3-b3cc-733ffba4b4b7` (required, string) - Token unique identifier
 
 ##### Retrieve a token [GET]
 
@@ -204,7 +206,7 @@ The response is an object that has a key called `organizations`. This key contai
 #### User [/users/{user_id}]
 
 + Parameter
-    + user_id (required, string, `5bea0358-db40-429e-bd82-953016a7e2s7`)... User unique identifier
+    + user_id: `5bea0358-db40-429e-bd82-953016a7e2s7` (required, string) - User unique identifier
 
 ##### Retrieve a user [GET]
 

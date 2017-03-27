@@ -10,10 +10,10 @@ Create a new security group
 
 The response is an object that has a key called `security_group`. This key contain a standard `security_group` object.
 
-+ Parameters
-    + organization (required, string, `000a115d-2852-4b0a-9ce8-47f1134ba95a`)... Organization unique identifier
-    + name (required, string, `security-group-01`)... The security group name
-    + description (required, string, `arm`)... The security group description
++ Attributes
+    + organization: `000a115d-2852-4b0a-9ce8-47f1134ba95a` (required, string) - Organization unique identifier
+    + name: `security-group-01` (required, string) - The security group name
+    + description: `arm` (required, string) - The security group description
 
 + Request (application/json)
 
@@ -73,7 +73,7 @@ The response is an object that has a key called `security_groups`. This key cont
 #### Operation on a security groups [/security_groups/{group_id}]
 
 + Parameters
-    + group_id (required, string, `000a115d-2852-4b1a-9ce8-47f1134ba95a`)... Security group id unique identifier
+    + group_id: `000a115d-2852-4b1a-9ce8-47f1134ba95a`(required, string) - Security group id unique identifier
 
 ##### Retrieves a security group [GET]
 
@@ -166,13 +166,23 @@ direction: "outbound"
 ip_range: "0.0.0.0/0"
 protocol: "ICMP"
 
-+ Parameters
-    + organization (required, string, `000a115d-2852-4b0a-9ce8-47f1134ba95a`)... Organization unique identifier
-    + action (required, string, `accept, drop`)... The rule action
-    + direction (required, string, `outbound, inbound`)... The rule direction
-    + ip_range (required, string, `0.0.0.0/0`). The IPs range, must be an IPv4 range
-    + protocol (required, string, `TCP, UDP, ICMP`)... The rule protocol
-    + dest_port_from (optional, string, `25`)... The port between 1 and 65535
++ Attributes
+    + organization: `000a115d-2852-4b0a-9ce8-47f1134ba95a` (required, string) - Organization unique identifier
+    + action (required, enum[string]) - The rule action
+        + Members
+            + `accept`
+            + `drop`
+    + direction (required, enum[string]) - The rule direction
+        + Members
+            + `outbound`
+            + `inbound`
+    + ip_range: `0.0.0.0/0` (required, string) - The IPs range, must be an IPv4 range
+    + protocol (required, enum[string]) - The rule protocol
+        + Members
+            + `TCP`
+            + `UDP`
+            + `ICMP`
+    + dest_port_from: `65` (optional, string) - The port between 1 and 65535
 
 + Request (application/json)
 
@@ -187,19 +197,19 @@ protocol: "ICMP"
 
 + Response 201 (application/json)
 
-    {
-      "rule": {
-          "direction": "inbound",
-          "protocol": "TCP",
-          "ip_range": "0.0.0.0/0",
-          "dest_port_from": null,
-          "action": "drop",
-          "position": 2,
-          "dest_port_to": null,
-          "editable": null,
-          "id": "ef2136c9-6c21-491a-b238-b38de24726a7"
-      }
-    }
+            {
+              "rule": {
+                  "direction": "inbound",
+                  "protocol": "TCP",
+                  "ip_range": "0.0.0.0/0",
+                  "dest_port_from": null,
+                  "action": "drop",
+                  "position": 2,
+                  "dest_port_to": null,
+                  "editable": null,
+                  "id": "ef2136c9-6c21-491a-b238-b38de24726a7"
+              }
+            }
 
 ##### List all rules [GET]
 

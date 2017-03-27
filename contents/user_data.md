@@ -32,32 +32,39 @@ There are two endpoints to access user data:
 Get the keys of available User Data.
 
 + Response 200 (application/json)
-    {
-      "user_data": [
-        "ssh-host-fingerprints",
-        "mykey"
-      ]
-    }
+
+            {
+              "user_data": [
+                "ssh-host-fingerprints",
+                "mykey"
+              ]
+            }
 
 
 #### Specific User Data [/user_data/{key_id}]
 
 + Parameters
-    + key_id: mykey (requires, string)
+    + key_id: `mykey` (required, string)
 
 ##### Create/Edit User Data [PATCH]
 
 + Request User Data content
     + Headers
-        Content-Type: text/plain
+
+            Content-Type: text/plain
 
     + Body
-        supervalue
+
+            supervalue
+
+
++ Response 201
 
 ##### Show User Data [GET]
 
 + Response 200 (text/plain)
-    supervalue
+
+            supervalue
 
 ##### Delete User Data [DELETE]
 

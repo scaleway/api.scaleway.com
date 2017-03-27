@@ -10,10 +10,10 @@ Create a new snapshot.
 
 The response is an object that has a key called `snapshot`. This key contain a standard `snapshot` object.
 
-+ Parameters
-    + name (required, string, ``)... Human readable snapshot name
-    + organization (required, string, `000a115d-2852-4b0a-9ce8-47f1134ba95a`)... Unique organization identifier
-    + volume_id (required, string, `701a8946-ff9d-4579-95e3-1c2c2d0f892d`)... Unique volume identifier
++ Attributes
+    + name: `snapshot-0-1` (required, string) - Human readable snapshot name
+    + organization: `000a115d-2852-4b0a-9ce8-47f1134ba95a`(required, string) - Unique organization identifier
+    + volume_id: `701a8946-ff9d-4579-95e3-1c2c2d0f892d`(required, string) - Unique volume identifier
 
 + Request (application/json)
 
@@ -86,7 +86,7 @@ The response is an object that has a key called `snapshots`. This key contain an
 #### Snapshot [/snapshots/{snapshot_id}]
 
 + Parameters
-    + snapshot_id (required, string, `6f418e5f-b42d-4423-a0b5-349c74c454a4`)... Snapshot unique identifier
+    + snapshot_id: `6f418e5f-b42d-4423-a0b5-349c74c454a4`(required, string) - Snapshot unique identifier
 
 ##### Retrieve a snapshot [GET]
 
@@ -119,15 +119,18 @@ Update details about a snapshot
 The response is an object that has a key called `snapshot`. This key contain a standard `snapshot` object.
 
 + Parameters
-    + snapshot_id (required, string, `6f418e5f-b42d-4423-a0b5-349c74c454a4`)... Snapshot unique identifier
-    + organization (required, string, `000a115d-2852-4b0a-9ce8-47f1134ba95a`)... Organization unique identifier
+    + snapshot_id: `6f418e5f-b42d-4423-a0b5-349c74c454a4`(required, string) - Snapshot unique identifier
+
+
++ Attributes
+    + name: `snapshot-0-1` (required, string) - Snapshot name
 
 + Request (application/json)
 
     + Body
 
             {
-                "organization": "f1350c5d-f1d8-4f9d-b114-6053905578e1"
+                "name": "snapshot-0-1"
             }
 
 

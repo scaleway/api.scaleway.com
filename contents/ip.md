@@ -11,8 +11,9 @@ Create a new reserved IP address
 
 The response is an object that has a key called `ip`. This key contain a standard `ip` object.
 
-+ Parameters
-    + organization (required, string, `000a115d-2852-4b0a-9ce8-47f1134ba95a`)... Organization unique identifier
++ Attributes
+    + organization: `000a115d-2852-4b0a-9ce8-47f1134ba95a` (required, string) - Organization unique identifier
+    + server: `000a115d-2852-4b0a-9ce8-47f1134ba95a` (optional, string) - Server identifier
 
 + Request (application/json)
 
@@ -55,7 +56,7 @@ The response is an object that has a key called `ips`. This key contain an array
 #### IP [/ips/{ip_id}]
 
 + Parameters
-    + ip_id (required, string, `b50cd740-892d-47d3-8cbf-88510ef626e7`)... Ip unique identifier
+    + ip_id: `b50cd740-892d-47d3-8cbf-88510ef626e7` (required, string) - IP unique identifier
 
 ##### Retrieve an IP address [GET]
 

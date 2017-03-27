@@ -11,11 +11,11 @@ Create a new image
 
 The response is an object that has a key called `image`. This key contain a standard `image` object.
 
-+ Parameters
-    + organization (required, string, `000a115d-2852-4b0a-9ce8-47f1134ba95a`)... Organization unique identifier
-    + name (required, string, `my_image`)... The image name
-    + arch (required, string, `arm`)... The architecture type
-    + root_volume (required, string, `f0361e7b-cbe4-4882-a999-945192b7171b`)... The root volume unique identifier
++ Attributes
+    + organization: `000a115d-2852-4b0a-9ce8-47f1134ba95a` (required, string) - Organization unique identifier
+    + name: `my_image` (required, string) - The image name
+    + arch: `arm` (required, string) - The architecture type
+    + root_volume: `f0361e7b-cbe4-4882-a999-945192b7171b` (required, string) - The root volume unique identifier
 
 + Request (application/json)
 
@@ -100,7 +100,7 @@ The response is an object that has a key called `images`. This key contain an ar
 #### Operation on a single image [/images/{image_id}]
 
 + Parameters
-    + image_id (required, string, `98bf3ac2-a1f5-471d-8c8f-1b706ab57ef0`)... Image unique identifier
+    + image_id: `98bf3ac2-a1f5-471d-8c8f-1b706ab57ef0`(required, string) - Image unique identifier
 
 ##### Retrieves an image [GET]
 
