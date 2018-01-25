@@ -14,7 +14,7 @@ The response is an object that has a key called `token`. This key contain a stan
 
     + email: `jsnow@got.com` (required, string) - User email
     + password: `winteriscoming` (required, string) - User password
-    + expires (optional, boolean) - Set if you want a Token wich doesn't expire
+    + expires (optional, boolean) - Set if you want a Token which doesn't expire
         + Default: `true`
 
 + Request (application/json)
@@ -154,7 +154,7 @@ The response code is a 204, which means that the action was successful with no r
 
 ### group Organizations
 
-This resources of API methods allows you to get your Organizations informations
+This resources of API methods allows you to get your Organizations information
 
 #### Organizations [/organizations]
 
@@ -210,7 +210,7 @@ The response is an object that has a key called `organizations`. This key contai
 
 ##### Retrieve a user [GET]
 
-List informations about your user account
+List information about your user account
 
 The response is an object that has a key called `user`. This key contain a standard `user` object.
 

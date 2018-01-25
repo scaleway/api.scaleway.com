@@ -28,7 +28,7 @@ To construct a proper request, you need to format the URL as follows:
 
 Example: `https://cp-par1.scaleway.com/volumes/f929fe39-63f8-4be8-a80e-1e9c8ae22a76`
 
-The following code is an example request to retrieve detailed informations about a volume
+The following code is an example request to retrieve detailed information about a volume
 
 ```
 % curl -H 'X-Auth-Token: 017ce0ce-20ec-4d4ez-b44c-e561a23481d2c' -H 'Content-Type: application/json' https://cp-par1.scaleway.com/volumes/f929fe39-63f8-4be8-a80e-1e9c8ae22a76 -i
@@ -103,7 +103,7 @@ Input and output data must be valid JSON with appropriate Content-Type header se
 - type:
 
   - `invalid_request_error`: Occur when your request has invalid parameters.
-  - `invitalid_auth`: Arise when there is a problem of authentication.
+  - `invalid_auth`: Arise when there is a problem of authentication.
   - `unknown_resource`: Occur when the resource doesn't exist.
   - `authorization_required`: You don't have sufficient right to access the resource.
   - `api_error`: API errors use in case of problem with api domain's servers
@@ -164,7 +164,7 @@ Input and output data must be valid JSON with appropriate Content-Type header se
 
 Most of listing requests receive a paginated response. Your client needs to
 handle the pagination transparently as Scaleway reserves the right to paginate
-any non-paginted API endpoint at anytime without warning.
+any non-paginated API endpoint at anytime without warning.
 
 
 **Paginated request**
@@ -193,7 +193,7 @@ The *X-Total-Count* header contains the total number of items for the resource.
 
 The *Link* header as specified by [rfc
 5988](https://tools.ietf.org/html/rfc5988) helps to navigate between pages.
-Each programming langage has a specific way to parse it. With Python for
+Each programming language has a specific way to parse it. With Python for
 example, the *Link* header can be parsed with
 [python-requests](http://docs.python-requests.org/en/master/):
 

@@ -309,7 +309,7 @@ A collection of actions to be applied on a server
 
 ##### List all actions [GET]
 
-List all actions available for the secified server
+List all actions available for the specified server
 
 The response is an object that has a key called `actions`. This key contain an array of action
 
