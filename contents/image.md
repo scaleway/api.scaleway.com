@@ -1,7 +1,7 @@
 ### group Images
 
 Images allow you to create series of servers with predefined configuration.
-For instance, you can prepare to scale your serving capacity with a frontend image for an Apache server.
+For instance, you can prepare to scale your serving capacity with a front-end image for an Apache server.
 
 #### Images [/images]
 

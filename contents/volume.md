@@ -85,7 +85,7 @@ The response is an object that has a key called `volumes`. This key contain an a
 + Parameters
     + volume_id: `f929fe39-63f8-4be8-a80e-1e9c8ae22a76`(required, string) - Volume unique identifier
 
-##### Retrieves informations about a volume [GET]
+##### Retrieves information about a volume [GET]
 
 List an individual volume
 
