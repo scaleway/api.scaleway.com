@@ -27,9 +27,9 @@ The response is an object that has a key called `token`. This key contain a stan
                 "expires": false
             }
 
-+ Response 201
++ Response 201 (application/json)
 
-    + Headers (application/json)
+    + Headers
 
             Location: https://account.cloud.online.net/tokens/9de8f869-c58e-4aa3-9208-2d4eaff5fa20
 
@@ -58,36 +58,36 @@ The response is an object that has a key called `tokens`. This key contain an ar
 
 + Response 200 (application/json)
 
+
         {
-            {
-                "tokens": [
-                    {
-                        "creation_date": "2014-03-13T10:53:11.456319+00:00",
-                        "expires": null,
-                        "id": "4e5570fb-c854-5349-979f-9f51d608d34z",
-                        "inherits_user_perms": true,
-                        "permissions": [],
-                        "roles": {
-                            "organization": null,
-                            "role": null
-                        },
-                        "user_id": "5bea0358-db40-429e-bd82-953016a7e2s7"
+            "tokens": [
+                {
+                    "creation_date": "2014-03-13T10:53:11.456319+00:00",
+                    "expires": null,
+                    "id": "4e5570fb-c854-5349-979f-9f51d608d34z",
+                    "inherits_user_perms": true,
+                    "permissions": [],
+                    "roles": {
+                        "organization": null,
+                        "role": null
                     },
-                   {
-                        "creation_date": "2014-05-19T18:05:47.304433+00:00",
-                        "expires": "2014-05-20T14:05:06.393875+00:00",
-                        "id": "654c95b0-2cf5-41a3-b3cc-733ffba4b4b7",
-                        "inherits_user_perms": true,
-                        "permissions": [],
-                        "roles": {
-                            "organization": null,
-                            "role": null
-                        },
-                        "user_id": "5bea0358-db40-429e-bd82-953016a7e2s7"
-                    }
-                ]
-            }
+                    "user_id": "5bea0358-db40-429e-bd82-953016a7e2s7"
+                },
+               {
+                    "creation_date": "2014-05-19T18:05:47.304433+00:00",
+                    "expires": "2014-05-20T14:05:06.393875+00:00",
+                    "id": "654c95b0-2cf5-41a3-b3cc-733ffba4b4b7",
+                    "inherits_user_perms": true,
+                    "permissions": [],
+                    "roles": {
+                        "organization": null,
+                        "role": null
+                    },
+                    "user_id": "5bea0358-db40-429e-bd82-953016a7e2s7"
+                }
+            ]
         }
+
 
 
 #### Token [/tokens/{token_id}]

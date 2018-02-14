@@ -1,0 +1,81 @@
+/* Basic page-wide colors */
+@background-color: white;
+@text-color: black;
+
+@link-color: #FEBD3E;
+@nav-hover-border-color: @link-color;
+@right-link-color: @link-color;
+
+/* Notes and warnings */
+@note-text-color: @text-color;
+@note-title-text-color: #3498db;
+@note-background-color: mix(@note-title-text-color, @background-color, 8%);
+@note-border-color: @note-title-text-color;
+
+@warning-text-color: @text-color;
+@warning-title-text-color: darken(#e74c3c, 10%);
+@warning-background-color: mix(@warning-title-text-color, @background-color, 7%);
+@warning-border-color: @warning-title-text-color;
+
+/* HTTP method-specific colors */
+@group-background-color: @background-color;
+@group-title-background-color: contrast(@background-color,
+                                        darken(@background-color, 7%),
+                                        lighten(@background-color, 7%));
+@group-border-color: contrast(@background-color,
+                              darken(@background-color, 7%),
+                              lighten(@background-color, 7%));
+@group-text-color: contrast(@group-background-color);
+
+/* HTTP GET */
+@get-color: white;
+@get-background-color: #3498db;
+@get-text-color: contrast(@get-background-color);
+@get-badge-text-color: white;
+@get-border-color: @get-background-color;
+
+/* HTTP HEAD */
+@head-color: @get-color;
+@head-background-color: @get-background-color;
+@head-text-color: @get-text-color;
+@head-badge-text-color: @get-badge-text-color;
+@head-border-color: @get-border-color;
+
+/* HTTP OPTIONS */
+@options-color: @get-color;
+@options-background-color: @get-background-color;
+@options-text-color: @get-text-color;
+@options-badge-text-color: @get-badge-text-color;
+@options-border-color: @get-border-color;
+
+/* HTTP PUT */
+@put-color: white;
+@put-background-color: #f39c12;
+@put-text-color: contrast(@put-background-color);
+@put-badge-text-color: white;
+@put-border-color: @put-background-color;
+
+/* HTTP PATCH */
+@patch-color: @put-color;
+@patch-background-color: @put-background-color;
+@patch-text-color: @put-text-color;
+@patch-badge-text-color: @put-badge-text-color;
+@patch-border-color: @put-border-color;
+
+/* HTTP POST */
+@post-color: white;
+@post-background-color: #18bc9c;
+@post-text-color: contrast(@post-background-color);
+@post-badge-text-color: white;
+@post-border-color: @post-background-color;
+
+/* HTTP DELETE */
+@delete-color: white;
+@delete-background-color: #e74c3c;
+@delete-text-color: contrast(@delete-background-color);
+@delete-badge-text-color: white;
+@delete-border-color: @delete-background-color;
+
+/* Code colors */
+@title-code-background-color: rgba(255, 255, 255, 0.7);
+@title-code-border-color: transparent;

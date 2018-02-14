@@ -1,0 +1,46 @@
+doctype
+
+include mixins.jade
+
+html
+    head
+        meta(charset="utf-8")
+        title= self.api.name || 'API Documentation'
+        style!= self.css
+
+        //-<!-- build:css styles/vendor.css -->
+        // bower:css
+        link(rel='stylesheet', href='../vendor/bootstrap/dist/css/bootstrap.css')
+        link(rel='stylesheet', href='../vendor/fontawesome/css/font-awesome.css')
+        // endbower
+        //-<!-- endbuild -->
+        link(rel='stylesheet', href='/themes/main.css')
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+        style.
+          .nav-left, .container-fluid.triple .row .content {
+            top: 90px!important;
+          }
+    body.preload
+      #global
+        include header
+
+        #nav-background
+        div.container-fluid.triple
+            .row
+                block nav
+                    +Nav()
+
+                .content
+                    #right-panel-background
+
+                    block content
+                        +ContentTriple()
+
+        script: include scripts.js
+        //-<!-- build:js scripts/vendor.js -->
+        // bower:js
+        script(src='../vendor/jquery/dist/jquery.js')
+        script(src='../vendor/bootstrap/dist/js/bootstrap.js')
+        // endbower
+        //-<!-- endbuild -->

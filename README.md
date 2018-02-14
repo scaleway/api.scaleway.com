@@ -40,3 +40,7 @@ API client                  | C                  | [@QuentinPerez](https://githu
 Apache libcloud integration | Python             | [@bonifaido](https://github.com/bonifaido)       | Work in progree at: https://github.com/apache/libcloud/pull/777
 API client                  | Golang             | [@breakbit](https://github.com/breakbit)         | https://github.com/breakbit/scaleway
 CLI                         | Node.js            | [@Unitech](https://github.com/Unitech)           | https://github.com/Unitech/scaleway-commander
+
+## API Testing
+
+Scaleway API specifications are tested and you can run those tests as well.
