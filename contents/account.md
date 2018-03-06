@@ -233,6 +233,13 @@ The response is an object that has a key called `user`. This key contain a stand
 
 Update the SSH keys linked to your user account.
 
+        {
+         "ssh_public_keys": [
+            {"key":"<YOUR KEY>"},
+            {"key":"<YOUR KEY 2>"}
+            ]
+        }
+
 Make a `PATCH` request to to update the SSH keys linked to the user account.
 
 The response is an object that has a key called `user`. This key contain a standard `user` object.
