@@ -216,15 +216,45 @@ The response is an object that has a key called `user`. This key contain a stand
 
 + Response 200 (application/json)
 
+            {
+             "user": {
+                 "email": "jsnow@got.com",
+                 "firstname": "John",
+                 "fullname": "John Snow",
+                 "id": "5bea0358-db40-429e-bd82-953016a7e2s7",
+                 "lastname": "Snow",
+                 "organizations": null,
+                 "roles": null,
+                 "ssh_public_keys": null
+             }
+           }
 
-            "user": {
-                "email": "jsnow@got.com",
-                "firstname": "John",
-                "fullname": "John Snow",
-                "id": "5bea0358-db40-429e-bd82-953016a7e2s7",
-                "lastname": "Snow",
-                "organizations": null,
-                "roles": null,
-                "ssh_public_keys": null
+##### Update the SSH keys of an user [PATCH]
+
+Update the SSH keys linked to your user account.
+
+        {
+         "ssh_public_keys": [
+            {"key":"<YOUR KEY>"},
+            {"key":"<YOUR KEY 2>"}
+            ]
+        }
+
+Make a `PATCH` request to to update the SSH keys linked to the user account.
+
+The response is an object that has a key called `user`. This key contain a standard `user` object.
+
++ Response 200 (application/json)
+
+            {
+             "user": {
+                 "email": "jsnow@got.com",
+                 "firstname": "John",
+                 "fullname": "John Snow",
+                 "id": "5bea0358-db40-429e-bd82-953016a7e2s7",
+                 "lastname": "Snow",
+                 "organizations": null,
+                 "roles": null,
+                 "ssh_public_keys": null
+             }
             }
-
