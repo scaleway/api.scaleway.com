@@ -1,6 +1,6 @@
 ### group Servers
 
-A Server is a dedicated machine for your own use. `servers` endpoint allow you to create, list or delete your servers.
+A Server is a dedicated machine for your own use. `servers` endpoints allow you to create, list or delete your servers.
 
 #### Servers [/servers]
 

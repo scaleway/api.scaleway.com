@@ -1,6 +1,6 @@
 ### group Volumes
 
-A Volume abstracts data storage operations for your servers in a flexible manner. `volumes` endpoint allow you to create, list or delete your volumes.
+A Volume abstracts data storage operations for your servers in a flexible manner. `volumes` endpoints allow you to create, list or delete your volumes.
 
 #### Volumes [/volumes]
 
