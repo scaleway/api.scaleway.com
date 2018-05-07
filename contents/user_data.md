@@ -7,7 +7,7 @@ As an example of use, Scaleway images contain the script
 [`scw-generate-ssh-keys`][scw-generate-ssh-keys] which generates SSH server's
 host keys then stores their fingerprints as user data under the key
 "ssh-host-fingerprints". This way, our users can ensure they are really
-connecting to their Scaleway instance and they are not victim of a [MITM
+connecting to their Scaleway instance and they are not victim of a [man-in-the-middle
 attack][mitm].
 
 [scw-generate-ssh-keys]: https://github.com/scaleway/image-tools/blob/master/skeleton-common/usr/local/sbin/scw-generate-ssh-keys#L14
