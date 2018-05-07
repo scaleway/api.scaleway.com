@@ -1,6 +1,6 @@
 ### group Servers
 
-A Server is a dedicated machine for your own use. `servers` endpoint allow you to create, list or delete your servers.
+A Server is a dedicated machine for your own use. `servers` endpoints allow you to create, list or delete your servers.
 
 #### Servers [/servers]
 
@@ -8,7 +8,7 @@ A Server is a dedicated machine for your own use. `servers` endpoint allow you t
 
 Create a new server
 
-The response is an object that has a key called `server`. This key contain a standard `server` object.
+The response is an object that has a key called `server`. This key contains a standard `server` object.
 
 + Attributes
 
@@ -82,9 +82,9 @@ The response is an object that has a key called `server`. This key contain a sta
 
 ##### List all servers [GET]
 
-List all servers associate with your account
+List all servers associated with your account
 
-The response is an object that has a key called `servers`. This key contain an array of server objects each of which contain the standard `server` attributes.
+The response is an object that has a key called `servers`. This key contains an array of server objects each of which contains the standard `server` attributes.
 
 + Response 200 (application/json)
 
@@ -168,7 +168,7 @@ The response is an object that has a key called `servers`. This key contain an a
 
 List an individual server
 
-The response is an object that has a key called `server`. This key contain a standard `server` object.
+The response is an object that has a key called `server`. This key contains a standard `server` object.
 
 + Response 200 (application/json)
 
@@ -211,7 +211,7 @@ The response is an object that has a key called `server`. This key contain a sta
 
 Update details about a server
 
-The response is an object that has a key called `server`. This key contain a standard `server` object.
+The response is an object that has a key called `server`. This key contains a standard `server` object.
 
 + Request
 
@@ -311,7 +311,7 @@ A collection of actions to be applied on a server
 
 List all actions available for the specified server
 
-The response is an object that has a key called `actions`. This key contain an array of action
+The response is an object that has a key called `actions`. This key contains an array of action
 
 + Response 200 (application/json)
 
@@ -327,7 +327,7 @@ The response is an object that has a key called `actions`. This key contain an a
 
 Execute an action on a server
 
-The response is an object that has a key called `task`. This key contain a standard `task` object.
+The response is an object that has a key called `task`. This key contains a standard `task` object.
 
 + Parameters 
 

@@ -8,7 +8,7 @@ A snapshot is a full-volume copy stored in our secure data centers.
 
 Create a new snapshot.
 
-The response is an object that has a key called `snapshot`. This key contain a standard `snapshot` object.
+The response is an object that has a key called `snapshot`. This key contains a standard `snapshot` object.
 
 + Attributes
     + name: `snapshot-0-1` (required, string) - Human readable snapshot name
@@ -46,9 +46,9 @@ The response is an object that has a key called `snapshot`. This key contain a s
 
 ##### List all snapshots [GET]
 
-List all snapshots associate with your account
+List all snapshots associated with your account
 
-The response is an object that has a key called `snapshots`. This key contain an array of snapshot objects each of which contain the standard `snapshot` attributes.
+The response is an object that has a key called `snapshots`. This key contains an array of snapshot objects each of which contain the standard `snapshot` attributes.
 
 + Response 200 (application/json)
 
@@ -92,7 +92,7 @@ The response is an object that has a key called `snapshots`. This key contain an
 
 List an individual snapshot
 
-The response is an object that has a key called `snapshot`. This key contain a standard `snapshot` object.
+The response is an object that has a key called `snapshot`. This key contains a standard `snapshot` object.
 
 + Response 200 (application/json)
 
@@ -116,7 +116,7 @@ The response is an object that has a key called `snapshot`. This key contain a s
 
 Update details about a snapshot
 
-The response is an object that has a key called `snapshot`. This key contain a standard `snapshot` object.
+The response is an object that has a key called `snapshot`. This key contains a standard `snapshot` object.
 
 + Parameters
     + snapshot_id: `6f418e5f-b42d-4423-a0b5-349c74c454a4`(required, string) - Snapshot unique identifier

@@ -1,7 +1,7 @@
 ### group IPs
 
 A reserved IP address is a static IP address designed for cloud computing.
-Reserved IPs address allow you to mask the failure of a server rapidly reallocating the IPs address to another server in your account.
+Reserved IP addresses allow you to mask the failure of a server rapidly reallocating the IP addresses to another server in your account.
 
 #### IPs [/ips]
 
@@ -9,7 +9,7 @@ Reserved IPs address allow you to mask the failure of a server rapidly reallocat
 
 Create a new reserved IP address
 
-The response is an object that has a key called `ip`. This key contain a standard `ip` object.
+The response is an object that has a key called `ip`. This key contains a standard `ip` object.
 
 + Attributes
     + organization: `000a115d-2852-4b0a-9ce8-47f1134ba95a` (required, string) - Organization unique identifier
@@ -34,11 +34,11 @@ The response is an object that has a key called `ip`. This key contain a standar
               }
             }
 
-##### Retrieves all IPs addresses [GET]
+##### Retrieves all IP addresses [GET]
 
-List all IPs associate with your account
+List all IP addresses associated with your account
 
-The response is an object that has a key called `ips`. This key contain an array of ip objects each of which contain the standard `ip` attributes.
+The response is an object that has a key called `ips`. This key contains an array of ip objects each of which contains the standard `ip` attributes.
 
 + Response 200 (application/json)
 
@@ -62,7 +62,7 @@ The response is an object that has a key called `ips`. This key contain an array
 
 List an individual IP address
 
-The response is an object that has a key called `ip`. This key contain a standard `ip` object.
+The response is an object that has a key called `ip`. This key contains a standard `ip` object.
 
 + Response 200 (application/json)
 
@@ -79,7 +79,7 @@ The response is an object that has a key called `ip`. This key contain a standar
 
 Allow you to remap an IP address to another server
 
-The response is an object that has a key called `ip`. This key contain a standard `ip` object.
+The response is an object that has a key called `ip`. This key contains a standard `ip` object.
 
 + Request (application/json)
 
@@ -113,7 +113,7 @@ The response is an object that has a key called `ip`. This key contain a standar
 
 Allow you to update the server and/or the reverse
 
-The response is an object that has a key called `ip`. This key contain a standard `ip` object.
+The response is an object that has a key called `ip`. This key contains a standard `ip` object.
 
 + Request (application/json)
 

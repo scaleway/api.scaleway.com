@@ -1,6 +1,6 @@
 ### group Volumes
 
-A Volume abstracts data storage operations for your servers in a flexible manner. `volumes` endpoint allow you to create, list or delete your volumes.
+A Volume abstracts data storage operations for your servers in a flexible manner. `volumes` endpoints allow you to create, list or delete your volumes.
 
 #### Volumes [/volumes]
 
@@ -8,7 +8,7 @@ A Volume abstracts data storage operations for your servers in a flexible manner
 
 Create a new volume
 
-The response is an object that has a key called `volume`. This key contain a standard `volume` object.
+The response is an object that has a key called `volume`. This key contains a standard `volume` object.
 
 + Attributes
     + name: `volume-0-3` (required, string) - The volume name
@@ -50,9 +50,9 @@ The response is an object that has a key called `volume`. This key contain a sta
 
 ##### Retrieves all volumes [GET]
 
-List all volumes associate with your account
+List all volumes associated with your account
 
-The response is an object that has a key called `volumes`. This key contain an array of volume objects each of which contain the standard `volume` attributes.
+The response is an object that has a key called `volumes`. This key contains an array of volume objects each of which contains the standard `volume` attributes.
 
 + Response 200 (application/json)
 
@@ -89,7 +89,7 @@ The response is an object that has a key called `volumes`. This key contain an a
 
 List an individual volume
 
-The response is an object that has a key called `volume`. This key contain a standard `volume` object.
+The response is an object that has a key called `volume`. This key contains a standard `volume` object.
 
 + Response 200 (application/json)
 

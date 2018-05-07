@@ -52,7 +52,7 @@ The response is an object that has a key called `image`. This key contain a stan
 
 ##### List all images [GET]
 
-List all images associate with your account
+List all images associated with your account
 
 The response is an object that has a key called `images`. This key contain an array of image objects each of which contain the standard `images` attributes.
 

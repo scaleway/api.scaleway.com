@@ -8,7 +8,7 @@ A Token is an identifier associated with your account. We use this token to auth
 
 Authenticates a user against their username, password, and then returns a new Token, which can be used until it expires.
 
-The response is an object that has a key called `token`. This key contain a standard `token` object.
+The response is an object that has a key called `token`. This key contains a standard `token` object.
 
 + Attributes
 
@@ -52,9 +52,9 @@ The response is an object that has a key called `token`. This key contain a stan
 
 ##### List all tokens [GET]
 
-List all Tokens associate with your account
+List all Tokens associated with your account
 
-The response is an object that has a key called `tokens`. This key contain an array of token objects each of which contain the standard `token` attributes.
+The response is an object that has a key called `tokens`. This key contains an array of token objects each of which contains the standard `token` attributes.
 
 + Response 200 (application/json)
 
@@ -99,7 +99,7 @@ The response is an object that has a key called `tokens`. This key contain an ar
 
 List an individual Token
 
-The response is an object that has a key called `token`. This key contain a standard `token` object.
+The response is an object that has a key called `token`. This key contains a standard `token` object.
 
 + Response 200 (application/json)
 
@@ -123,7 +123,7 @@ The response is an object that has a key called `token`. This key contain a stan
 
 Increase Token expiration time of 30 minutes
 
-The response is an object that has a key called `token`. This key contain a standard `token` object.
+The response is an object that has a key called `token`. This key contains a standard `token` object.
 
 + Response 200 (application/json)
 
@@ -162,7 +162,7 @@ This resources of API methods allows you to get your Organizations information
 
 List all Organizations associate with your account
 
-The response is an object that has a key called `organizations`. This key contain an array of organization objects each of which contain the standard `organization` attributes.
+The response is an object that has a key called `organizations`. This key contains an array of organization objects each of which contain the standard `organization` attributes.
 
 + Response 200 (application/json)
 
@@ -212,7 +212,7 @@ The response is an object that has a key called `organizations`. This key contai
 
 List information about your user account
 
-The response is an object that has a key called `user`. This key contain a standard `user` object.
+The response is an object that has a key called `user`. This key contains a standard `user` object.
 
 + Response 200 (application/json)
 
@@ -242,7 +242,7 @@ Update the SSH keys linked to your user account.
 
 Make a `PATCH` request to to update the SSH keys linked to the user account.
 
-The response is an object that has a key called `user`. This key contain a standard `user` object.
+The response is an object that has a key called `user`. This key contains a standard `user` object.
 
 + Response 200 (application/json)
 
