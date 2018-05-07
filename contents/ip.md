@@ -36,7 +36,7 @@ The response is an object that has a key called `ip`. This key contains a standa
 
 ##### Retrieves all IPs addresses [GET]
 
-List all IPs associate with your account
+List all IPs associated with your account
 
 The response is an object that has a key called `ips`. This key contains an array of ip objects each of which contains the standard `ip` attributes.
 

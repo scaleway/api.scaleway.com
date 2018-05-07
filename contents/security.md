@@ -41,7 +41,7 @@ The response is an object that has a key called `security_group`. This key conta
 
 ##### List all security groups [GET]
 
-List all security groups associate with your account
+List all security groups associated with your account
 
 The response is an object that has a key called `security_groups`. This key contains an array of security group objects each of which contains the standard `security_groups` attributes.
 

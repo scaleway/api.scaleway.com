@@ -50,7 +50,7 @@ The response is an object that has a key called `volume`. This key contains a st
 
 ##### Retrieves all volumes [GET]
 
-List all volumes associate with your account
+List all volumes associated with your account
 
 The response is an object that has a key called `volumes`. This key contains an array of volume objects each of which contains the standard `volume` attributes.
 

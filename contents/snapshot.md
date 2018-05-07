@@ -46,7 +46,7 @@ The response is an object that has a key called `snapshot`. This key contains a 
 
 ##### List all snapshots [GET]
 
-List all snapshots associate with your account
+List all snapshots associated with your account
 
 The response is an object that has a key called `snapshots`. This key contains an array of snapshot objects each of which contain the standard `snapshot` attributes.
 

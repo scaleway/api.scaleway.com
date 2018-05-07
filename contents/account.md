@@ -52,7 +52,7 @@ The response is an object that has a key called `token`. This key contains a sta
 
 ##### List all tokens [GET]
 
-List all Tokens associate with your account
+List all Tokens associated with your account
 
 The response is an object that has a key called `tokens`. This key contains an array of token objects each of which contains the standard `token` attributes.
 

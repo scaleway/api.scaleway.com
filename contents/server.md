@@ -82,7 +82,7 @@ The response is an object that has a key called `server`. This key contains a st
 
 ##### List all servers [GET]
 
-List all servers associate with your account
+List all servers associated with your account
 
 The response is an object that has a key called `servers`. This key contains an array of server objects each of which contains the standard `server` attributes.
 
