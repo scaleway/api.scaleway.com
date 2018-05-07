@@ -28,7 +28,7 @@ To construct a proper request, you need to format the URL as follows:
 
 Example: `https://cp-par1.scaleway.com/volumes/f929fe39-63f8-4be8-a80e-1e9c8ae22a76`
 
-The following code is an example request to retrieve detailed information about a volume
+The following code is an example request to retrieve detailed information about a volume:
 
 ```
 % curl -H 'X-Auth-Token: 017ce0ce-20ec-4d4ez-b44c-e561a23481d2c' -H 'Content-Type: application/json' https://cp-par1.scaleway.com/volumes/f929fe39-63f8-4be8-a80e-1e9c8ae22a76 -i
@@ -72,7 +72,7 @@ You authenticate to the API by requesting a token. You can create a token from t
 
 Basic Authentication process:
 
-- Query via POST request the /tokens resource [see here how to](https://developer.scaleway.com/#tokens-tokens-post)
+- Query via POST request the `/tokens` resource [see here how to](https://developer.scaleway.com/#tokens-tokens-post)
 
 - Supply an "X-Auth-Token" header followed by the token you get previously, e.g. "4e0b46e4-7c1d-44d4-8ba6-dc5f80694397"
 
@@ -169,7 +169,7 @@ any non-paginated API endpoint at anytime without warning.
 
 **Paginated request**
 
-Requests against paginated endpoints accept two querystring arguments:
+Requests against paginated endpoints accept two `querystring` arguments:
 
 * *page*, a positive integer to choose the page to display.
 * *per_page*, an positive integer lower or equal to 100 to select the number of
