@@ -8,7 +8,7 @@ Security groups are like a virtual firewall. With security groups, you can defin
 
 Create a new security group
 
-The response is an object that has a key called `security_group`. This key contain a standard `security_group` object.
+The response is an object that has a key called `security_group`. This key contains a standard `security_group` object.
 
 + Attributes
     + organization: `000a115d-2852-4b0a-9ce8-47f1134ba95a` (required, string) - Organization unique identifier
@@ -43,7 +43,7 @@ The response is an object that has a key called `security_group`. This key conta
 
 List all security groups associate with your account
 
-The response is an object that has a key called `security_groups`. This key contain an array of security group objects each of which contain the standard `security_groups` attributes.
+The response is an object that has a key called `security_groups`. This key contains an array of security group objects each of which contains the standard `security_groups` attributes.
 
 + Response 200 (application/json)
 
@@ -79,7 +79,7 @@ The response is an object that has a key called `security_groups`. This key cont
 
 List an individual security group
 
-The response is an object that has a key called `security_group`. This key contain a standard `security_group` object.
+The response is an object that has a key called `security_group`. This key contains a standard `security_group` object.
 
 + Response 200 (application/json)
 
@@ -108,7 +108,7 @@ The response is an object that has a key called `security_group`. This key conta
 
 Update a security group details
 
-The response is an object that has a key called `security_group`. This key contain a standard `security_group` object.
+The response is an object that has a key called `security_group`. This key contains a standard `security_group` object.
 
 + Request (application/json)
 
@@ -159,7 +159,7 @@ The response code is a 204, which means that the action was successful with no r
 
 Create a new rule
 
-The response is an object that has a key called `rule`. This key contain a standard `rule` object.
+The response is an object that has a key called `rule`. This key contains a standard `rule` object.
 
 action: "accept"
 direction: "outbound"
@@ -215,7 +215,7 @@ protocol: "ICMP"
 
 List all rules for a security group
 
-The response is an object that has a key called `rules`. This key contain an array of rules for a security group each of which contain the standard `rule` attributes.
+The response is an object that has a key called `rules`. This key contains an array of rules for a security group each of which contain the standard `rule` attributes.
 
 + Response 200 (application/json)
 
@@ -262,7 +262,7 @@ The response is an object that has a key called `rules`. This key contain an arr
 
 Update a security rule
 
-The response is an object that has a key called `rule`. This key contain a standard `rule` object.
+The response is an object that has a key called `rule`. This key contains a standard `rule` object.
 
 + Request (application/json)
 
@@ -296,7 +296,7 @@ The response is an object that has a key called `rule`. This key contain a stand
 
 List an individual security rule
 
-The response is an object that has a key called `rule`. This key contain a standard `rule` object.
+The response is an object that has a key called `rule`. This key contains a standard `rule` object.
 
 + Response 200 (application/json)
 
