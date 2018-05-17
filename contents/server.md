@@ -16,9 +16,10 @@ The response is an object that has a key called `server`. This key contains a st
     + organization: `000a115d-2852-4b0a-9ce8-47f1134ba95a` (required, string) - Organization unique identifier
     + image: `85917034-46b0-4cc5-8b48-f0a2245e357e` (required, string) - Image unique identifier
     + volumes: `volumes: {1: {name: "vol_demo", organization: "ecc1c86a-eabb-43a7-9c0a-77e371753c0a", size: 10000000000, volume_type: "l_sdd"` (required, [string]) - A list of volumes identifier to be attached to the server
-    + commercial_type: `VC1S` (optional, string) - The type of the server you want to create (C1, VC1S, VC1M, VC1L, C2S, C2M, C2L).
+    + commercial_type: `START1-S` (optional, string) - The type of the server you want to create (START1-XS, START1-S, START1-M, START1-L, C1, C2S, C2M, C2L).
     + tags: `[test, www]` (optional, [string]) - List of tags
     + enable_ipv6: `true` (optional, boolean) - Enable IPv6 on the server.
+    + boot_type: `local` (optional, [string]) - Boot method (local, bootscript)
 
 + Request
 
@@ -28,9 +29,10 @@ The response is an object that has a key called `server`. This key contains a st
               "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
               "name": "my_server",
               "image": "85917034-46b0-4cc5-8b48-f0a2245e357e",
-              "commercial_type": "VC1S",
+              "commercial_type": "START1-S",
               "tags": ["test", "www"],
-              "enable_ipv6": true
+              "enable_ipv6": true, 
+              "boot_type": local
             }
 
 + Response 201 (application/json)
@@ -57,8 +59,9 @@ The response is an object that has a key called `server`. This key contains a st
                 "enable_ipv6": true,
                 "state": "stopped",
                 "ipv6": null,
-                "commercial_type": "VC1S",
+                "commercial_type": "START1-S",
                 "arch": "x86_64",
+                "boot_type": "local",
                 "tags": [
                   "test",
                   "www"
@@ -103,6 +106,7 @@ The response is an object that has a key called `servers`. This key contains an 
                   "private_ip": null,
                   "public_ip": null,
                   "state": "running",
+                  "boot_type": "local",
                   "tags": [
                     "test",
                     "www"
@@ -186,6 +190,7 @@ The response is an object that has a key called `server`. This key contains a st
                 "private_ip": null,
                 "public_ip": null,
                 "state": "running",
+                "boot_type": "local",
                 "tags": [
                   "test",
                   "www"
@@ -230,6 +235,7 @@ The response is an object that has a key called `server`. This key contains a st
               "private_ip": null, 
               "public_ip": null, 
               "state": "running",
+              "boot_type": "local",
               "tags": [
                 "test", 
                 "www", 
@@ -268,6 +274,7 @@ The response is an object that has a key called `server`. This key contains a st
                 "private_ip": null,
                 "public_ip": null,
                 "state": "running",
+                "boot_type": "local",
                 "tags": [
                   "prod",
                   "www",
