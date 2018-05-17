@@ -32,7 +32,7 @@ The response is an object that has a key called `server`. This key contains a st
               "commercial_type": "START1-S",
               "tags": ["test", "www"],
               "enable_ipv6": true, 
-              "boot_type": local
+              "boot_type": "local"
             }
 
 + Response 201 (application/json)
