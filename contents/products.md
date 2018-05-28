@@ -10,7 +10,7 @@ This resource provides the list of the different types of servers within the zon
 
     {
       "servers": {
-        "VC1S": {
+        "START1-S": {
           "baremetal": false,
           "monthly_price": 2.99,
           "volumes_constraint": {
@@ -48,10 +48,7 @@ A resource goes scarce when it hits a first low_stock threshold (that is differe
 
     {
       "servers": {
-        "VC1S": {
-          "availability": "available"
-        },
-        "START1-XS": {
+        "START1-S": {
           "availability": "available"
         }
       }
