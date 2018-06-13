@@ -45,42 +45,107 @@ The response is an object that has a key called `server`. This key contains a st
 
             {
               "server": {
-                "bootscript": null,
-                "dynamic_ip_required": true,
-                "id": "3cb18e2d-f4f7-48f7-b452-59b88ae8fc8c",
-                "image": {
-                  "id": "85917034-46b0-4cc5-8b48-f0a2245e357e",
-                  "name": "ubuntu working"
-                },
-                "name": "my_server",
-                "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
-                "private_ip": null,
-                "public_ip": null,
-                "enable_ipv6": true,
-                "state": "stopped",
-                "ipv6": null,
-                "commercial_type": "START1-S",
-                "arch": "x86_64",
-                "boot_type": "local",
-                "tags": [
-                  "test",
-                  "www"
-                ],
-                "volumes": {
-                  "0": {
-                    "export_uri": null,
-                    "id": "d9257116-6919-49b4-a420-dcfdff51fcb1",
-                    "name": "vol simple snapshot",
-                    "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
-                    "server": {
-                      "id": "3cb18e2d-f4f7-48f7-b452-59b88ae8fc8c",
-                      "name": "my_server"
+                  "maintenances": [],
+                  "state_detail": "",
+                  "image": {
+                    "default_bootscript": {
+                      "kernel": "http://169.254.42.24/kernel/x86_64-mainline-lts-4.4-4.4.127-rev1/vmlinuz-4.4.127",
+                      "initrd": "http://169.254.42.24/initrd/initrd-Linux-x86_64-v3.14.4.gz",
+                      "default": true,
+                      "bootcmdargs": "LINUX_COMMON scaleway boot=local nbd.max_part=16",
+                      "architecture": "x86_64",
+                      "title": "x86_64 mainline 4.4.127 rev1",
+                      "dtb": "",
+                      "organization": "11111111-1111-4111-8111-111111111111",
+                      "id": "b1e68c26-a19c-4eac-9222-498b22bd7ad9",
+                      "public": true
                     },
-                    "size": 10000000000,
-                    "volume_type": "l_ssd"
-                  }
+                    "creation_date": "2018-04-11T06:35:44.250891+00:00",
+                    "name": "Ubuntu Xenial",
+                    "modification_date": "2018-04-11T06:41:06.414064+00:00",
+                    "organization": "51b656e3-4865-41e8-adbc-0c45bdd780db",
+                    "extra_volumes": "[]",
+                    "arch": "x86_64",
+                    "id": "e20532c4-1fa0-4c97-992f-436b8d372c07",
+                    "root_volume": {
+                      "size": 50000000000,
+                      "id": "83548ffe-1312-461c-86eb-3c7717710563",
+                      "volume_type": "l_ssd",
+                      "name": "snapshot-d12cfbb6-4843-48ad-84dc-f3a8690fdb02-2018-04-11_06:35"
+                    },
+                    "public": true
+                  },
+                  "creation_date": "2018-05-24T13:48:18.865352+00:00",
+                  "public_ip": {
+                    "dynamic": false,
+                    "id": "d44a3223-56f6-4617-97cd-aea1d69c9e1d",
+                    "address": "163.172.136.159"
+                  },
+                  "private_ip": null,
+                  "id": "22a5c380-0a27-4a55-8f91-bedf427f6b6a",
+                  "dynamic_ip_required": false,
+                  "modification_date": "2018-05-24T13:49:10.388108+00:00",
+                  "enable_ipv6": false,
+                  "hostname": "scw-be19b9",
+                  "state": "stopped",
+                  "bootscript": {
+                    "kernel": "http://169.254.42.24/kernel/x86_64-mainline-lts-4.4-4.4.127-rev1/vmlinuz-4.4.127",
+                    "initrd": "http://169.254.42.24/initrd/initrd-Linux-x86_64-v3.14.4.gz",
+                    "default": true,
+                    "bootcmdargs": "LINUX_COMMON scaleway boot=local nbd.max_part=16",
+                    "architecture": "x86_64",
+                    "title": "x86_64 mainline 4.4.127 rev1",
+                    "dtb": "",
+                    "organization": "11111111-1111-4111-8111-111111111111",
+                    "id": "b1e68c26-a19c-4eac-9222-498b22bd7ad9",
+                    "public": true
+                  },
+                  "location": null,
+                  "boot_type": "local",
+                  "ipv6": null,
+                  "commercial_type": "START1-L",
+                  "tags": [],
+                  "arch": "x86_64",
+                  "extra_networks": [],
+                  "name": "scw-be19b9",
+                  "volumes": {
+                    "0": {
+                      "size": 50000000000,
+                      "state": "available",
+                      "name": "snapshot-d12cfbb6-4843-48ad-84dc-f3a8690fdb02-2018-04-11_06:35",
+                      "modification_date": "2018-05-24T13:48:18.865352+00:00",
+                      "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                      "export_uri": "device://dev/vda",
+                      "creation_date": "2018-05-24T13:48:18.865352+00:00",
+                      "id": "1cb48c59-1816-47b9-b3d8-54560772389c",
+                      "volume_type": "l_ssd",
+                      "server": {
+                        "id": "22a5c380-0a27-4a55-8f91-bedf427f6b6a",
+                        "name": "scw-be19b9"
+                      }
+                    },
+                    "1": {
+                      "size": 150000000000,
+                      "state": "available",
+                      "name": "Volume",
+                      "modification_date": "2018-05-24T13:48:19.267400+00:00",
+                      "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                      "export_uri": "device://dev/vdb",
+                      "creation_date": "2018-05-24T13:48:18.865352+00:00",
+                      "id": "ae789518-73c1-4e8b-8235-357da8dd9e04",
+                      "volume_type": "l_ssd",
+                      "server": {
+                        "id": "22a5c380-0a27-4a55-8f91-bedf427f6b6a",
+                        "name": "scw-be19b9"
+                      }
+                    }
+                  },
+                  "security_group": {
+                    "id": "e78bc604-90c7-46f5-b705-3b401fbddd4d",
+                    "name": "Default security group"
+                  },
+                  "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a"
                 }
-              }
             }
 
 ##### List all servers [GET]
@@ -94,69 +159,112 @@ The response is an object that has a key called `servers`. This key contains an 
             {
               "servers": [
                 {
-                  "bootscript": null,
-                  "dynamic_public_ip": false,
-                  "id": "741db378-6b87-46d4-a8c5-4e46a09ab1f8",
+                  "maintenances": [],
+                  "state_detail": "booted",
                   "image": {
-                    "id": "85917034-46b0-4cc5-8b48-f0a2245e357e",
-                    "name": "ubuntu working"
+                    "default_bootscript": {
+                      "kernel": "http://169.254.42.24/kernel/x86_64-mainline-lts-4.4-4.4.127-rev1/vmlinuz-4.4.127",
+                      "initrd": "http://169.254.42.24/initrd/initrd-Linux-x86_64-v3.14.4.gz",
+                      "default": true,
+                      "bootcmdargs": "LINUX_COMMON scaleway boot=local nbd.max_part=16",
+                      "architecture": "x86_64",
+                      "title": "x86_64 mainline 4.4.127 rev1",
+                      "dtb": "",
+                      "organization": "11111111-1111-4111-8111-111111111111",
+                      "id": "b1e68c26-a19c-4eac-9222-498b22bd7ad9",
+                      "public": true
+                    },
+                    "creation_date": "2018-04-11T06:35:44.250891+00:00",
+                    "name": "Ubuntu Xenial",
+                    "modification_date": "2018-04-11T06:41:06.414064+00:00",
+                    "organization": "51b656e3-4865-41e8-adbc-0c45bdd780db",
+                    "extra_volumes": "[]",
+                    "arch": "x86_64",
+                    "id": "e20532c4-1fa0-4c97-992f-436b8d372c07",
+                    "root_volume": {
+                      "size": 50000000000,
+                      "id": "83548ffe-1312-461c-86eb-3c7717710563",
+                      "volume_type": "l_ssd",
+                      "name": "snapshot-d12cfbb6-4843-48ad-84dc-f3a8690fdb02-2018-04-11_06:35"
+                    },
+                    "public": true
                   },
-                  "name": "my_server",
-                  "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
-                  "private_ip": null,
-                  "public_ip": null,
+                  "creation_date": "2018-05-24T13:48:18.865352+00:00",
+                  "public_ip": {
+                    "dynamic": false,
+                    "id": "d44a3223-56f6-4617-97cd-aea1d69c9e1d",
+                    "address": "163.172.136.159"
+                  },
+                  "private_ip": "10.14.167.165",
+                  "id": "22a5c380-0a27-4a55-8f91-bedf427f6b6a",
+                  "dynamic_ip_required": false,
+                  "modification_date": "2018-05-24T13:49:10.388108+00:00",
+                  "enable_ipv6": false,
+                  "hostname": "scw-be19b9",
                   "state": "running",
+                  "bootscript": {
+                    "kernel": "http://169.254.42.24/kernel/x86_64-mainline-lts-4.4-4.4.127-rev1/vmlinuz-4.4.127",
+                    "initrd": "http://169.254.42.24/initrd/initrd-Linux-x86_64-v3.14.4.gz",
+                    "default": true,
+                    "bootcmdargs": "LINUX_COMMON scaleway boot=local nbd.max_part=16",
+                    "architecture": "x86_64",
+                    "title": "x86_64 mainline 4.4.127 rev1",
+                    "dtb": "",
+                    "organization": "11111111-1111-4111-8111-111111111111",
+                    "id": "b1e68c26-a19c-4eac-9222-498b22bd7ad9",
+                    "public": true
+                  },
+                  "location": {
+                    "platform_id": "13",
+                    "hypervisor_id": "314",
+                    "node_id": "19",
+                    "cluster_id": "4",
+                    "zone_id": "par1"
+                  },
                   "boot_type": "local",
-                  "tags": [
-                    "test",
-                    "www"
-                  ],
+                  "ipv6": null,
+                  "commercial_type": "START1-L",
+                  "tags": [],
+                  "arch": "x86_64",
+                  "extra_networks": [],
+                  "name": "scw-be19b9",
                   "volumes": {
                     "0": {
-                      "export_uri": null,
-                      "id": "c1eb8f3a-4f0b-4b95-a71c-93223e457f5a",
-                      "name": "vol simple snapshot",
+                      "size": 50000000000,
+                      "state": "available",
+                      "name": "snapshot-d12cfbb6-4843-48ad-84dc-f3a8690fdb02-2018-04-11_06:35",
+                      "modification_date": "2018-05-24T13:48:18.865352+00:00",
                       "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                      "export_uri": "device://dev/vda",
+                      "creation_date": "2018-05-24T13:48:18.865352+00:00",
+                      "id": "1cb48c59-1816-47b9-b3d8-54560772389c",
+                      "volume_type": "l_ssd",
                       "server": {
-                        "id": "741db378-6b87-46d4-a8c5-4e46a09ab1f8",
-                        "name": "my_server"
-                      },
-                      "size": 10000000000,
-                      "volume_type": "l_ssd"
+                        "id": "22a5c380-0a27-4a55-8f91-bedf427f6b6a",
+                        "name": "scw-be19b9"
+                      }
+                    },
+                    "1": {
+                      "size": 150000000000,
+                      "state": "available",
+                      "name": "Volume",
+                      "modification_date": "2018-05-24T13:48:19.267400+00:00",
+                      "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                      "export_uri": "device://dev/vdb",
+                      "creation_date": "2018-05-24T13:48:18.865352+00:00",
+                      "id": "ae789518-73c1-4e8b-8235-357da8dd9e04",
+                      "volume_type": "l_ssd",
+                      "server": {
+                        "id": "22a5c380-0a27-4a55-8f91-bedf427f6b6a",
+                        "name": "scw-be19b9"
+                      }
                     }
-                  }
-                },
-                {
-                  "bootscript": null,
-                  "dynamic_public_ip": false,
-                  "id": "0e9f85af-b6aa-401e-a00d-484f832c5024",
-                  "image": {
-                    "id": "85917034-46b0-4cc5-8b48-f0a2245e357e",
-                    "name": "ubuntu working"
                   },
-                  "name": "my_server",
-                  "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
-                  "private_ip": null,
-                  "public_ip": null,
-                  "state": "running",
-                  "tags": [
-                    "test",
-                    "www"
-                  ],
-                  "volumes": {
-                    "0": {
-                      "export_uri": null,
-                     "id": "fb09bb31-ecd9-4dff-8b55-b6e45715199d",
-                      "name": "vol simple snapshot",
-                      "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
-                      "server": {
-                        "id": "0e9f85af-b6aa-401e-a00d-484f832c5024",
-                        "name": "my_server"
-                      },
-                      "size": 10000000000,
-                      "volume_type": "l_ssd"
-                    }
-                  }
+                  "security_group": {
+                    "id": "e78bc604-90c7-46f5-b705-3b401fbddd4d",
+                    "name": "Default security group"
+                  },
+                  "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a"
                 }
               ]
             }
@@ -178,38 +286,112 @@ The response is an object that has a key called `server`. This key contains a st
 
             {
               "server": {
-                "bootscript": null,
-                "dynamic_public_ip": false,
-                "id": "741db378-6b87-46d4-a8c5-4e46a09ab1f8",
-                "image": {
-                  "id": "85917034-46b0-4cc5-8b48-f0a2245e357e",
-                  "name": "ubuntu working"
+              "maintenances": [],
+              "state_detail": "booted",
+              "image": {
+                "default_bootscript": {
+                  "kernel": "http://169.254.42.24/kernel/x86_64-mainline-lts-4.4-4.4.127-rev1/vmlinuz-4.4.127",
+                  "initrd": "http://169.254.42.24/initrd/initrd-Linux-x86_64-v3.14.4.gz",
+                  "default": true,
+                  "bootcmdargs": "LINUX_COMMON scaleway boot=local nbd.max_part=16",
+                  "architecture": "x86_64",
+                  "title": "x86_64 mainline 4.4.127 rev1",
+                  "dtb": "",
+                  "organization": "11111111-1111-4111-8111-111111111111",
+                  "id": "b1e68c26-a19c-4eac-9222-498b22bd7ad9",
+                  "public": true
                 },
-                "name": "my_server",
-                "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
-                "private_ip": null,
-                "public_ip": null,
-                "state": "running",
-                "boot_type": "local",
-                "tags": [
-                  "test",
-                  "www"
-                ],
-                "volumes": {
-                  "0": {
-                    "export_uri": null,
-                    "id": "c1eb8f3a-4f0b-4b95-a71c-93223e457f5a",
-                    "name": "vol simple snapshot",
-                    "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
-                    "server": {
-                      "id": "741db378-6b87-46d4-a8c5-4e46a09ab1f8",
-                      "name": "my_server"
-                    },
-                    "size": 10000000000,
-                    "volume_type": "l_ssd"
+                "creation_date": "2018-04-11T06:35:44.250891+00:00",
+                "name": "Ubuntu Xenial",
+                "modification_date": "2018-04-11T06:41:06.414064+00:00",
+                "organization": "51b656e3-4865-41e8-adbc-0c45bdd780db",
+                "extra_volumes": "[]",
+                "arch": "x86_64",
+                "id": "e20532c4-1fa0-4c97-992f-436b8d372c07",
+                "root_volume": {
+                  "size": 50000000000,
+                  "id": "83548ffe-1312-461c-86eb-3c7717710563",
+                  "volume_type": "l_ssd",
+                  "name": "snapshot-d12cfbb6-4843-48ad-84dc-f3a8690fdb02-2018-04-11_06:35"
+                },
+                "public": true
+              },
+              "creation_date": "2018-05-24T13:48:18.865352+00:00",
+              "public_ip": {
+                "dynamic": false,
+                "id": "d44a3223-56f6-4617-97cd-aea1d69c9e1d",
+                "address": "163.172.136.159"
+              },
+              "private_ip": "10.14.167.165",
+              "id": "22a5c380-0a27-4a55-8f91-bedf427f6b6a",
+              "dynamic_ip_required": false,
+              "modification_date": "2018-05-24T13:49:10.388108+00:00",
+              "enable_ipv6": false,
+              "hostname": "scw-be19b9",
+              "state": "running",
+              "bootscript": {
+                "kernel": "http://169.254.42.24/kernel/x86_64-mainline-lts-4.4-4.4.127-rev1/vmlinuz-4.4.127",
+                "initrd": "http://169.254.42.24/initrd/initrd-Linux-x86_64-v3.14.4.gz",
+                "default": true,
+                "bootcmdargs": "LINUX_COMMON scaleway boot=local nbd.max_part=16",
+                "architecture": "x86_64",
+                "title": "x86_64 mainline 4.4.127 rev1",
+                "dtb": "",
+                "organization": "11111111-1111-4111-8111-111111111111",
+                "id": "b1e68c26-a19c-4eac-9222-498b22bd7ad9",
+                "public": true
+              },
+              "location": {
+                "platform_id": "13",
+                "hypervisor_id": "314",
+                "node_id": "19",
+                "cluster_id": "4",
+                "zone_id": "par1"
+              },
+              "boot_type": "local",
+              "ipv6": null,
+              "commercial_type": "START1-L",
+              "tags": [],
+              "arch": "x86_64",
+              "extra_networks": [],
+              "name": "scw-be19b9",
+              "volumes": {
+                "0": {
+                  "size": 50000000000,
+                  "state": "available",
+                  "name": "snapshot-d12cfbb6-4843-48ad-84dc-f3a8690fdb02-2018-04-11_06:35",
+                  "modification_date": "2018-05-24T13:48:18.865352+00:00",
+                  "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                  "export_uri": "device://dev/vda",
+                  "creation_date": "2018-05-24T13:48:18.865352+00:00",
+                  "id": "1cb48c59-1816-47b9-b3d8-54560772389c",
+                  "volume_type": "l_ssd",
+                  "server": {
+                    "id": "22a5c380-0a27-4a55-8f91-bedf427f6b6a",
+                    "name": "scw-be19b9"
+                  }
+                },
+                "1": {
+                  "size": 150000000000,
+                  "state": "available",
+                  "name": "Volume",
+                  "modification_date": "2018-05-24T13:48:19.267400+00:00",
+                  "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                  "export_uri": "device://dev/vdb",
+                  "creation_date": "2018-05-24T13:48:18.865352+00:00",
+                  "id": "ae789518-73c1-4e8b-8235-357da8dd9e04",
+                  "volume_type": "l_ssd",
+                  "server": {
+                    "id": "22a5c380-0a27-4a55-8f91-bedf427f6b6a",
+                    "name": "scw-be19b9"
                   }
                 }
-              }
+              },
+              "security_group": {
+                "id": "e78bc604-90c7-46f5-b705-3b401fbddd4d",
+                "name": "Default security group"
+              },
+              "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a"
             }
 
 ##### Update a server [PUT]
@@ -223,38 +405,113 @@ The response is an object that has a key called `server`. This key contains a st
     + Body
 
             {
-              "bootscript": null,
-              "dynamic_public_ip": false, 
-              "id": "741db378-6b87-46d4-a8c5-4e46a09ab1f8",
+              "server": {
+              "maintenances": [],
+              "state_detail": "booted",
               "image": {
-                    "id": "85917034-46b0-4cc5-8b48-f0a2245e357e", 
-                    "name": "ubuntu working"
-                  }, 
-              "name": "my_server", 
-              "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a", 
-              "private_ip": null, 
-              "public_ip": null, 
+                "default_bootscript": {
+                  "kernel": "http://169.254.42.24/kernel/x86_64-mainline-lts-4.4-4.4.127-rev1/vmlinuz-4.4.127",
+                  "initrd": "http://169.254.42.24/initrd/initrd-Linux-x86_64-v3.14.4.gz",
+                  "default": true,
+                  "bootcmdargs": "LINUX_COMMON scaleway boot=local nbd.max_part=16",
+                  "architecture": "x86_64",
+                  "title": "x86_64 mainline 4.4.127 rev1",
+                  "dtb": "",
+                  "organization": "11111111-1111-4111-8111-111111111111",
+                  "id": "b1e68c26-a19c-4eac-9222-498b22bd7ad9",
+                  "public": true
+                },
+                "creation_date": "2018-04-11T06:35:44.250891+00:00",
+                "name": "Ubuntu Xenial",
+                "modification_date": "2018-04-11T06:41:06.414064+00:00",
+                "organization": "51b656e3-4865-41e8-adbc-0c45bdd780db",
+                "extra_volumes": "[]",
+                "arch": "x86_64",
+                "id": "e20532c4-1fa0-4c97-992f-436b8d372c07",
+                "root_volume": {
+                  "size": 50000000000,
+                  "id": "83548ffe-1312-461c-86eb-3c7717710563",
+                  "volume_type": "l_ssd",
+                  "name": "snapshot-d12cfbb6-4843-48ad-84dc-f3a8690fdb02-2018-04-11_06:35"
+                },
+                "public": true
+              },
+              "creation_date": "2018-05-24T13:48:18.865352+00:00",
+              "public_ip": {
+                "dynamic": false,
+                "id": "d44a3223-56f6-4617-97cd-aea1d69c9e1d",
+                "address": "163.172.136.159"
+              },
+              "private_ip": "10.14.167.165",
+              "id": "22a5c380-0a27-4a55-8f91-bedf427f6b6a",
+              "dynamic_ip_required": false,
+              "modification_date": "2018-05-24T13:49:10.388108+00:00",
+              "enable_ipv6": false,
+              "hostname": "scw-be19b9",
               "state": "running",
+              "bootscript": {
+                "kernel": "http://169.254.42.24/kernel/x86_64-mainline-lts-4.4-4.4.127-rev1/vmlinuz-4.4.127",
+                "initrd": "http://169.254.42.24/initrd/initrd-Linux-x86_64-v3.14.4.gz",
+                "default": true,
+                "bootcmdargs": "LINUX_COMMON scaleway boot=local nbd.max_part=16",
+                "architecture": "x86_64",
+                "title": "x86_64 mainline 4.4.127 rev1",
+                "dtb": "",
+                "organization": "11111111-1111-4111-8111-111111111111",
+                "id": "b1e68c26-a19c-4eac-9222-498b22bd7ad9",
+                "public": true
+              },
+              "location": {
+                "platform_id": "13",
+                "hypervisor_id": "314",
+                "node_id": "19",
+                "cluster_id": "4",
+                "zone_id": "par1"
+              },
               "boot_type": "local",
-              "tags": [
-                "test", 
-                "www", 
-                "new"
-              ], 
+              "ipv6": null,
+              "commercial_type": "START1-L",
+              "tags": [],
+              "arch": "x86_64",
+              "extra_networks": [],
+              "name": "scw-be19b9",
               "volumes": {
                 "0": {
-                  "export_uri": null, 
-                  "id": "c39b49f4-1804-4d03-96b4-952896b0918e", 
-                  "name": "vol simple snapshot", 
-                  "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a", 
+                  "size": 50000000000,
+                  "state": "available",
+                  "name": "snapshot-d12cfbb6-4843-48ad-84dc-f3a8690fdb02-2018-04-11_06:35",
+                  "modification_date": "2018-05-24T13:48:18.865352+00:00",
+                  "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                  "export_uri": "device://dev/vda",
+                  "creation_date": "2018-05-24T13:48:18.865352+00:00",
+                  "id": "1cb48c59-1816-47b9-b3d8-54560772389c",
+                  "volume_type": "l_ssd",
                   "server": {
-                    "id": "345b862b-9198-4633-94a5-3f0307702652", 
-                    "name": "my_server"
-                  }, 
-                  "size": 10000000000, 
-                  "volume_type": "l_ssd"
+                    "id": "22a5c380-0a27-4a55-8f91-bedf427f6b6a",
+                    "name": "scw-be19b9"
+                  }
+                },
+                "1": {
+                  "size": 150000000000,
+                  "state": "available",
+                  "name": "Volume",
+                  "modification_date": "2018-05-24T13:48:19.267400+00:00",
+                  "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                  "export_uri": "device://dev/vdb",
+                  "creation_date": "2018-05-24T13:48:18.865352+00:00",
+                  "id": "ae789518-73c1-4e8b-8235-357da8dd9e04",
+                  "volume_type": "l_ssd",
+                  "server": {
+                    "id": "22a5c380-0a27-4a55-8f91-bedf427f6b6a",
+                    "name": "scw-be19b9"
+                  }
                 }
-              }
+              },
+              "security_group": {
+                "id": "e78bc604-90c7-46f5-b705-3b401fbddd4d",
+                "name": "Default security group"
+              },
+              "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a"
             }
 
 
@@ -262,39 +519,112 @@ The response is an object that has a key called `server`. This key contains a st
 
             {
               "server": {
-                "bootscript": null,
-                "dynamic_public_ip": false,
-                "id": "741db378-6b87-46d4-a8c5-4e46a09ab1f8",
-                "image": {
-                  "id": "85917034-46b0-4cc5-8b48-f0a2245e357e",
-                  "name": "ubuntu working"
+              "maintenances": [],
+              "state_detail": "booted",
+              "image": {
+                "default_bootscript": {
+                  "kernel": "http://169.254.42.24/kernel/x86_64-mainline-lts-4.4-4.4.127-rev1/vmlinuz-4.4.127",
+                  "initrd": "http://169.254.42.24/initrd/initrd-Linux-x86_64-v3.14.4.gz",
+                  "default": true,
+                  "bootcmdargs": "LINUX_COMMON scaleway boot=local nbd.max_part=16",
+                  "architecture": "x86_64",
+                  "title": "x86_64 mainline 4.4.127 rev1",
+                  "dtb": "",
+                  "organization": "11111111-1111-4111-8111-111111111111",
+                  "id": "b1e68c26-a19c-4eac-9222-498b22bd7ad9",
+                  "public": true
                 },
-                "name": "my_server",
-                "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
-                "private_ip": null,
-                "public_ip": null,
-                "state": "running",
-                "boot_type": "local",
-                "tags": [
-                  "prod",
-                  "www",
-                   "new"
-                ],
-                "volumes": {
-                  "0": {
-                    "export_uri": null,
-                    "id": "c1eb8f3a-4f0b-4b95-a71c-93223e457f5a",
-                    "name": "vol simple snapshot",
-                    "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
-                    "server": {
-                      "id": "741db378-6b87-46d4-a8c5-4e46a09ab1f8",
-                      "name": "my_server"
-                    },
-                    "size": 10000000000,
-                    "volume_type": "l_ssd"
+                "creation_date": "2018-04-11T06:35:44.250891+00:00",
+                "name": "Ubuntu Xenial",
+                "modification_date": "2018-04-11T06:41:06.414064+00:00",
+                "organization": "51b656e3-4865-41e8-adbc-0c45bdd780db",
+                "extra_volumes": "[]",
+                "arch": "x86_64",
+                "id": "e20532c4-1fa0-4c97-992f-436b8d372c07",
+                "root_volume": {
+                  "size": 50000000000,
+                  "id": "83548ffe-1312-461c-86eb-3c7717710563",
+                  "volume_type": "l_ssd",
+                  "name": "snapshot-d12cfbb6-4843-48ad-84dc-f3a8690fdb02-2018-04-11_06:35"
+                },
+                "public": true
+              },
+              "creation_date": "2018-05-24T13:48:18.865352+00:00",
+              "public_ip": {
+                "dynamic": false,
+                "id": "d44a3223-56f6-4617-97cd-aea1d69c9e1d",
+                "address": "163.172.136.159"
+              },
+              "private_ip": "10.14.167.165",
+              "id": "22a5c380-0a27-4a55-8f91-bedf427f6b6a",
+              "dynamic_ip_required": false,
+              "modification_date": "2018-05-24T13:49:10.388108+00:00",
+              "enable_ipv6": false,
+              "hostname": "scw-be19b9",
+              "state": "running",
+              "bootscript": {
+                "kernel": "http://169.254.42.24/kernel/x86_64-mainline-lts-4.4-4.4.127-rev1/vmlinuz-4.4.127",
+                "initrd": "http://169.254.42.24/initrd/initrd-Linux-x86_64-v3.14.4.gz",
+                "default": true,
+                "bootcmdargs": "LINUX_COMMON scaleway boot=local nbd.max_part=16",
+                "architecture": "x86_64",
+                "title": "x86_64 mainline 4.4.127 rev1",
+                "dtb": "",
+                "organization": "11111111-1111-4111-8111-111111111111",
+                "id": "b1e68c26-a19c-4eac-9222-498b22bd7ad9",
+                "public": true
+              },
+              "location": {
+                "platform_id": "13",
+                "hypervisor_id": "314",
+                "node_id": "19",
+                "cluster_id": "4",
+                "zone_id": "par1"
+              },
+              "boot_type": "local",
+              "ipv6": null,
+              "commercial_type": "START1-L",
+              "tags": [],
+              "arch": "x86_64",
+              "extra_networks": [],
+              "name": "scw-be19b9",
+              "volumes": {
+                "0": {
+                  "size": 50000000000,
+                  "state": "available",
+                  "name": "snapshot-d12cfbb6-4843-48ad-84dc-f3a8690fdb02-2018-04-11_06:35",
+                  "modification_date": "2018-05-24T13:48:18.865352+00:00",
+                  "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                  "export_uri": "device://dev/vda",
+                  "creation_date": "2018-05-24T13:48:18.865352+00:00",
+                  "id": "1cb48c59-1816-47b9-b3d8-54560772389c",
+                  "volume_type": "l_ssd",
+                  "server": {
+                    "id": "22a5c380-0a27-4a55-8f91-bedf427f6b6a",
+                    "name": "scw-be19b9"
+                  }
+                },
+                "1": {
+                  "size": 150000000000,
+                  "state": "available",
+                  "name": "Volume",
+                  "modification_date": "2018-05-24T13:48:19.267400+00:00",
+                  "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a",
+                  "export_uri": "device://dev/vdb",
+                  "creation_date": "2018-05-24T13:48:18.865352+00:00",
+                  "id": "ae789518-73c1-4e8b-8235-357da8dd9e04",
+                  "volume_type": "l_ssd",
+                  "server": {
+                    "id": "22a5c380-0a27-4a55-8f91-bedf427f6b6a",
+                    "name": "scw-be19b9"
                   }
                 }
-              }
+              },
+              "security_group": {
+                "id": "e78bc604-90c7-46f5-b705-3b401fbddd4d",
+                "name": "Default security group"
+              },
+              "organization": "000a115d-2852-4b0a-9ce8-47f1134ba95a"
             }
 
 ##### Remove a server [DELETE]
