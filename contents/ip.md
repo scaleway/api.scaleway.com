@@ -120,7 +120,6 @@ The response is an object that has a key called `ip`. This key contains a standa
     + Body
 
             {
-                "id": "b50cd740-892d-47d3-8cbf-88510ef626e7",
                 "server": "4a1be97f-e4b1-47fc-b9e6-fc37d17a5198",
                 "reverse": "another-valid.url.com"
             }
