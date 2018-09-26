@@ -64,7 +64,7 @@ The response is an object that has a key called `server`. This key contains a st
                     "name": "Ubuntu Xenial",
                     "modification_date": "2018-04-11T06:41:06.414064+00:00",
                     "organization": "51b656e3-4865-41e8-adbc-0c45bdd780db",
-                    "extra_volumes": "[]",
+                    "extra_volumes": {},
                     "arch": "x86_64",
                     "id": "e20532c4-1fa0-4c97-992f-436b8d372c07",
                     "root_volume": {
@@ -178,7 +178,7 @@ The response is an object that has a key called `servers`. This key contains an 
                     "name": "Ubuntu Xenial",
                     "modification_date": "2018-04-11T06:41:06.414064+00:00",
                     "organization": "51b656e3-4865-41e8-adbc-0c45bdd780db",
-                    "extra_volumes": "[]",
+                    "extra_volumes": {},
                     "arch": "x86_64",
                     "id": "e20532c4-1fa0-4c97-992f-436b8d372c07",
                     "root_volume": {
@@ -305,7 +305,7 @@ The response is an object that has a key called `server`. This key contains a st
                 "name": "Ubuntu Xenial",
                 "modification_date": "2018-04-11T06:41:06.414064+00:00",
                 "organization": "51b656e3-4865-41e8-adbc-0c45bdd780db",
-                "extra_volumes": "[]",
+                "extra_volumes": {},
                 "arch": "x86_64",
                 "id": "e20532c4-1fa0-4c97-992f-436b8d372c07",
                 "root_volume": {
@@ -425,7 +425,7 @@ The response is an object that has a key called `server`. This key contains a st
                 "name": "Ubuntu Xenial",
                 "modification_date": "2018-04-11T06:41:06.414064+00:00",
                 "organization": "51b656e3-4865-41e8-adbc-0c45bdd780db",
-                "extra_volumes": "[]",
+                "extra_volumes": {},
                 "arch": "x86_64",
                 "id": "e20532c4-1fa0-4c97-992f-436b8d372c07",
                 "root_volume": {
@@ -538,7 +538,7 @@ The response is an object that has a key called `server`. This key contains a st
                 "name": "Ubuntu Xenial",
                 "modification_date": "2018-04-11T06:41:06.414064+00:00",
                 "organization": "51b656e3-4865-41e8-adbc-0c45bdd780db",
-                "extra_volumes": "[]",
+                "extra_volumes": {},
                 "arch": "x86_64",
                 "id": "e20532c4-1fa0-4c97-992f-436b8d372c07",
                 "root_volume": {
