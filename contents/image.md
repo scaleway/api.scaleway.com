@@ -34,7 +34,7 @@ The response is an object that has a key called `image`. This key contain a stan
           "image": {
             "arch": "arm",
             "creation_date": "2014-05-22T12:56:56.984011+00:00",
-            "extra_volumes": "[]",
+            "extra_volumes": {},
             "from_image": null,
             "from_server": null,
             "id": "98bf3ac2-a1f5-471d-8c8f-1b706ab57ef0",
@@ -63,7 +63,7 @@ The response is an object that has a key called `images`. This key contain an ar
             {
               "arch": "arm",
               "creation_date": "2014-05-22T12:56:56.984011+00:00",
-              "extra_volumes": "[]",
+              "extra_volumes": {},
               "from_image": null,
               "from_server": null,
               "id": "98bf3ac2-a1f5-471d-8c8f-1b706ab57ef0",
@@ -80,7 +80,7 @@ The response is an object that has a key called `images`. This key contain an ar
             {
               "arch": "arm",
               "creation_date": "2014-05-22T12:57:22.514299+00:00",
-              "extra_volumes": "[]",
+              "extra_volumes": {},
               "from_image": null,
               "from_server": null,
               "id": "1f73d975-35fc-4365-9ead-8dab7e54152f",
@@ -114,7 +114,7 @@ The response is an object that has a key called `image`. This key contain a stan
           "image": {
             "arch": "arm",
             "creation_date": "2014-05-22T12:56:56.984011+00:00",
-            "extra_volumes": "[]",
+            "extra_volumes": {},
             "from_image": null,
             "from_server": null,
             "id": "98bf3ac2-a1f5-471d-8c8f-1b706ab57ef0",
@@ -143,7 +143,7 @@ The response is an object that has a key called `image`. This key contain a stan
             {
                 "arch": "arm", 
                 "creation_date": "2014-05-22T12:57:22.514299+00:00", 
-                "extra_volumes": "[]", 
+                "extra_volumes": {}, 
                 "from_image": null, 
                 "from_server": null, 
                 "id": "1f73d975-35fc-4365-9ead-8dab7e54152f", 
@@ -165,7 +165,7 @@ The response is an object that has a key called `image`. This key contain a stan
           "image": {
             "arch": "arm",
             "creation_date": "2014-05-22T12:56:56.984011+00:00",
-            "extra_volumes": "[]",
+            "extra_volumes": {},
             "from_image": null,
             "from_server": null,
             "id": "98bf3ac2-a1f5-471d-8c8f-1b706ab57ef0",
