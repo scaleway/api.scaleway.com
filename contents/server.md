@@ -15,7 +15,7 @@ The response is an object that has a key called `server`. This key contains a st
     + name: `my_server` (required, string) - The server name
     + organization: `000a115d-2852-4b0a-9ce8-47f1134ba95a` (required, string) - Organization unique identifier
     + image: `85917034-46b0-4cc5-8b48-f0a2245e357e` (required, string) - Image unique identifier
-    + volumes: `volumes: {1: {name: "vol_demo", organization: "ecc1c86a-eabb-43a7-9c0a-77e371753c0a", size: 10000000000, volume_type: "l_sdd"` (required, [string]) - A list of volumes identifier to be attached to the server
+    + volumes: `volumes: {1: {name: "vol_demo", organization: "ecc1c86a-eabb-43a7-9c0a-77e371753c0a", size: 10000000000, volume_type: "l_ssd"}}` (optional, [string]) - A list of volumes identifier to be attached to the server. Required for X64 (Pro) commercial_types.
     + commercial_type: `START1-S` (optional, string) - The type of the server you want to create (START1-XS, START1-S, START1-M, START1-L, C1, C2S, C2M, C2L).
     + tags: `[test, www]` (optional, [string]) - List of tags
     + enable_ipv6: `true` (optional, boolean) - Enable IPv6 on the server.
